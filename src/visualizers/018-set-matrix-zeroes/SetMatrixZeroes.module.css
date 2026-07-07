@@ -1,0 +1,44 @@
+/* Set Matrix Zeroes — SetMatrixZeroes.module.css */
+
+.canvas { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 16px 0; }
+.matrixWrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+.matrixGrid {
+  display: grid;
+  gap: 4px;
+}
+
+.cell {
+  width: 52px; height: 52px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md); font-weight: 700; font-family: var(--font-mono);
+  color: var(--text-primary);
+  background: var(--bg-overlay);
+  border: 2px solid var(--border);
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  position: relative;
+}
+.cellPtr { position: absolute; top: 2px; left: 3px; font-size: 8px; font-family: var(--font-mono); color: var(--accent); opacity: 0.85; line-height: 1; }
+
+/* semantic states — correct token names */
+.current { background: var(--color-current-bg) !important; border-color: var(--color-current-border) !important; color: var(--color-current) !important; }
+.match   { background: var(--color-match-bg)   !important; border-color: var(--color-match-border)   !important; color: var(--color-match)   !important; }
+.special { background: var(--color-special-bg) !important; border-color: var(--color-special-border) !important; color: var(--color-special) !important; }
+.compare { background: var(--color-compare-bg) !important; border-color: var(--color-compare-border) !important; color: var(--color-compare) !important; }
+
+.badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+.badge {
+  padding: 3px 10px; border-radius: 12px;
+  font-size: var(--font-size-xs); font-weight: 500;
+  background: var(--color-special-bg);
+  border: 1px solid var(--color-special-border);
+  color: var(--color-special);
+}
+
+.resultBadge {
+  padding: 8px 16px; border-radius: var(--radius-md);
+  background: var(--color-match-bg);
+  border: 1px solid var(--color-match-border);
+  color: var(--color-match); font-size: var(--font-size-base); font-weight: 500;
+}

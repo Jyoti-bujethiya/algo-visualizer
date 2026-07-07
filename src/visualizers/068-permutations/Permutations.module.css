@@ -1,0 +1,28 @@
+.canvas { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 12px 0; }
+
+.sectionLabel { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Tiles row */
+.tilesRow { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.tileWrap { transition: transform 0.2s ease; }
+.tileSwapping { animation: tileShake 0.35s ease; }
+@keyframes tileShake {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-8px); }
+  70%  { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+.tile { width: 44px; height: 52px; }
+
+/* Swap indicator */
+.swapIndicator { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.swapLabel { font-size: 12px; font-weight: 700; color: #f59e0b; }
+.swapArrow { width: 48px; height: 28px; }
+
+/* Results */
+.resultSection { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.countBadge { font-size: 14px; font-weight: 700; color: var(--color-special); padding: 4px 14px; background: var(--color-special-bg); border: 2px solid var(--color-special); border-radius: 8px; }
+.resultGrid { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 560px; }
+.permRow { display: flex; gap: 3px; border-radius: 6px; overflow: hidden; border: 2px solid #16a34a; }
+.permCell { padding: 4px 10px; font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: white; background: #16a34a; border-right: 1px solid #d1fae5; }
+.permCell:last-child { border-right: none; }

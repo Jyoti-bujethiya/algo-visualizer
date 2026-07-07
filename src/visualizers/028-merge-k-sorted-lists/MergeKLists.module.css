@@ -1,0 +1,26 @@
+.canvas { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Input lists grid */
+.listsGrid { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.listCol { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-2) var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-overlay); }
+.listCol.activeList { border-color: var(--color-current); background: color-mix(in srgb, var(--color-current) 8%, transparent); }
+.listLabel { font-size: var(--font-size-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); }
+.listNodes { display: flex; flex-wrap: wrap; gap: var(--space-1); align-items: center; }
+.node { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-mono); font-weight: 700; font-size: var(--font-size-sm); background: var(--bg-surface); color: var(--text-primary); }
+.nodeActive { border-color: var(--color-current); background: color-mix(in srgb, var(--color-current) 15%, transparent); color: var(--color-current); }
+.empty { color: var(--text-muted); font-style: italic; font-size: var(--font-size-sm); }
+
+/* Heap */
+.heapRow { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.heapLabel { font-size: var(--font-size-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); white-space: nowrap; }
+.heapNodes { display: flex; gap: var(--space-1); flex-wrap: wrap; }
+.heapNode { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-special-border); border-radius: var(--radius-sm); font-family: var(--font-mono); font-weight: 700; font-size: var(--font-size-sm); background: var(--color-special-bg); color: var(--color-special); }
+.heapMin { border-color: var(--color-current); background: color-mix(in srgb, var(--color-current) 15%, transparent); color: var(--color-current); }
+
+/* Merged result */
+.mergedRow { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.mergedLabel { font-size: var(--font-size-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); white-space: nowrap; }
+.mergedNodes { display: flex; gap: var(--space-1); flex-wrap: wrap; }
+.mergedNode { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-match-border); border-radius: var(--radius-sm); font-family: var(--font-mono); font-weight: 700; font-size: var(--font-size-sm); background: var(--color-match-bg); color: var(--color-match); }
+
+.resultBadge { align-self: flex-start; padding: var(--space-2) var(--space-5); border-radius: var(--radius-sm); background: var(--color-match-bg); border: 1px solid var(--color-match-border); color: var(--color-match); font-size: var(--font-size-sm); font-weight: 600; }

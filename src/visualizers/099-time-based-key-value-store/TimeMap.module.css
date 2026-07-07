@@ -1,0 +1,13 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:16px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.storeWrap{display:flex;flex-direction:column;gap:10px;width:100%;max-width:520px}
+.keyRow{display:flex;align-items:flex-start;gap:10px}
+.keyLabel{font-family:var(--font-mono);font-weight:700;font-size:14px;color:var(--color-special);min-width:60px;padding-top:4px}
+.entriesRow{display:flex;gap:6px;flex-wrap:wrap}
+.entryCell{padding:6px 10px;border-radius:6px;border:2px solid var(--border);background:var(--bg-overlay);font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-secondary);transition:all .15s}
+.entryCurrent{border-color:var(--color-current);background:var(--color-current-bg);color:var(--color-current)}
+.entryCompare{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.entryMatch{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match)}
+.entryDone{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match);opacity:.7}
+.resultBadge{font-size:16px;font-weight:700;padding:4px 16px;border-radius:8px;font-family:var(--font-mono);border:2px solid var(--color-match);color:var(--color-match);background:var(--color-match-bg)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

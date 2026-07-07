@@ -1,0 +1,10 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:18px;padding:14px 0}
+.medianBadge{font-size:18px;font-weight:700;color:var(--color-special);padding:5px 18px;background:var(--color-special-bg);border:2px solid var(--color-special);border-radius:8px;font-family:var(--font-mono)}
+.twoHeap{display:flex;gap:40px;flex-wrap:wrap;justify-content:center}
+.heapBlock{display:flex;flex-direction:column;align-items:center;gap:8px}
+.heapTitle{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;text-align:center}
+.heapRow{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.heapCell{min-width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:50%;background:var(--bg-overlay);font-weight:700;font-size:15px;font-family:var(--font-mono);color:var(--text-primary)}
+.heapLoTop{border-color:var(--color-special)!important;background:var(--color-special-bg)!important;color:var(--color-special)!important;transform:scale(1.12)}
+.heapHiTop{border-color:var(--color-compare)!important;background:var(--color-compare-bg)!important;color:var(--color-compare)!important;transform:scale(1.12)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

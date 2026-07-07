@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import './tokens.css';
+@import 'highlight.js/styles/atom-one-dark.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* ── Focus ring ────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+code, pre { font-family: var(--font-mono); }
+
+/* ── Text selection ────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+/* ── Highlight.js skin — respect our bg ───────────────────────────────── */
+.hljs { background: transparent !important; }
+
+/* ── Light theme: swap to atom-one-light token colours ─────────────────── */
+[data-theme="light"] .hljs                          { color: #383a42; }
+[data-theme="light"] .hljs-comment,
+[data-theme="light"] .hljs-quote                    { color: #a0a1a7; font-style: italic; }
+[data-theme="light"] .hljs-doctag,
+[data-theme="light"] .hljs-keyword,
+[data-theme="light"] .hljs-formula                  { color: #a626a4; }
+[data-theme="light"] .hljs-section,
+[data-theme="light"] .hljs-name,
+[data-theme="light"] .hljs-selector-tag,
+[data-theme="light"] .hljs-deletion,
+[data-theme="light"] .hljs-subst                    { color: #e45649; }
+[data-theme="light"] .hljs-literal                  { color: #0184bb; }
+[data-theme="light"] .hljs-string,
+[data-theme="light"] .hljs-regexp,
+[data-theme="light"] .hljs-addition,
+[data-theme="light"] .hljs-attribute,
+[data-theme="light"] .hljs-meta .hljs-string        { color: #50a14f; }
+[data-theme="light"] .hljs-attr,
+[data-theme="light"] .hljs-variable,
+[data-theme="light"] .hljs-template-variable,
+[data-theme="light"] .hljs-type,
+[data-theme="light"] .hljs-selector-class,
+[data-theme="light"] .hljs-selector-attr,
+[data-theme="light"] .hljs-selector-pseudo,
+[data-theme="light"] .hljs-number                   { color: #986801; }
+[data-theme="light"] .hljs-symbol,
+[data-theme="light"] .hljs-bullet,
+[data-theme="light"] .hljs-link,
+[data-theme="light"] .hljs-meta,
+[data-theme="light"] .hljs-selector-id,
+[data-theme="light"] .hljs-title                    { color: #4078f2; }
+[data-theme="light"] .hljs-built_in,
+[data-theme="light"] .hljs-title.class_,
+[data-theme="light"] .hljs-class .hljs-title        { color: #c18401; }
+[data-theme="light"] .hljs-emphasis                 { font-style: italic; }
+[data-theme="light"] .hljs-strong                   { font-weight: bold; }
+[data-theme="light"] .hljs-link                     { text-decoration: underline; }
+
+/* ── Color-scheme ──────────────────────────────────────────────────────── */
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"]  { color-scheme: dark;  }

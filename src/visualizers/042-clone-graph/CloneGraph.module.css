@@ -1,0 +1,136 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+/* ── Twin panel layout ── */
+.twinPanel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.graphPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 240px;
+}
+
+.panelTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.panelIcon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Arrow between panels ── */
+.arrowCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.copyArrow {
+  width: 36px;
+  height: 36px;
+  animation: pulseArrow 1.4s ease-in-out infinite;
+}
+
+@keyframes pulseArrow {
+  0%, 100% { opacity: 0.6; transform: translateX(0); }
+  50%       { opacity: 1;   transform: translateX(4px); }
+}
+
+.arrowLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9333ea;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Clone list ── */
+.cloneList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  min-height: 60px;
+  padding: 4px;
+}
+
+.nodeIcon {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.emptyClone {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  align-self: center;
+}
+
+/* ── Progress bar ── */
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-overlay);
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #7c3aed);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+.progressLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9333ea;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .graphPanel {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .progressBar {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}

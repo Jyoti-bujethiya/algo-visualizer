@@ -1,0 +1,98 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.resultBadge {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+.resultTrue  { color: var(--color-match); background: var(--color-match-bg); border: 2px solid var(--color-match); }
+.resultFalse { color: var(--color-error); background: var(--color-error-bg); border: 2px solid var(--color-error); }
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Char header rows ── */
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.headerLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+/* String chars */
+.strBadge {
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 5px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-overlay);
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 700;
+  color: var(--text-primary);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.strBadgeActive {
+  border-color: var(--color-current);
+  background: var(--color-current-bg);
+  color: var(--color-current);
+  transform: scale(1.1);
+}
+
+/* Pattern char type badges */
+.patBadge {
+  position: relative;
+  min-width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 5px;
+  border: 1.5px solid;
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 800;
+  padding: 0 4px;
+}
+
+.patSup {
+  font-size: 7px;
+  font-weight: 700;
+  position: absolute;
+  top: 1px; right: 1px;
+  line-height: 1;
+}
+
+/* literal char */
+.patLit { background: #f9fafb; color: #374151; border-color: #d1d5db; }
+/* dot — wildcard */
+.patDot { background: #eff6ff; color: #1d4ed8; border-color: #93c5fd; }
+/* star — quantifier */
+.patStar { background: #fef9c3; color: #92400e; border-color: #fde68a; }

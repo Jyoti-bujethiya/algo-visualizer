@@ -1,0 +1,14 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:16px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.resultBadge{font-size:16px;font-weight:700;padding:6px 18px;border-radius:8px;font-family:var(--font-mono)}
+.resultTrue{color:var(--color-match);background:var(--color-match-bg);border:2px solid var(--color-match)}
+.resultFalse{color:var(--color-error);background:var(--color-error-bg);border:2px solid var(--color-error)}
+.stackRow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.stackCell{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-compare);border-radius:6px;background:var(--color-compare-bg);font-weight:700;font-size:16px;color:var(--color-compare);font-family:var(--font-mono)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}
+.opsRow{display:flex;flex-direction:column;gap:6px;width:100%;max-width:480px}
+.opRow{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg-surface);font-family:var(--font-mono);font-size:13px}
+.opName{font-weight:700;color:var(--color-current);min-width:80px}
+.opArg{color:var(--text-primary);font-weight:600}
+.opResult{margin-left:auto;font-weight:700;color:var(--color-match)}
+.minBadge{font-size:14px;font-weight:700;padding:3px 14px;border-radius:6px;color:var(--color-special);background:var(--color-special-bg);border:2px solid var(--color-special);font-family:var(--font-mono)}

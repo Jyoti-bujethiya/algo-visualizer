@@ -1,0 +1,147 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.resultBadge {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-match);
+  padding: 5px 18px;
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Circle layout ── */
+.circleWrap {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+}
+
+.circleRoadSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.circleHouse {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.houseSvg {
+  width: 50px;
+  height: 50px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.circleHouse.stateCurrent .houseSvg  { transform: scale(1.15); filter: drop-shadow(0 0 6px var(--color-current)); }
+.circleHouse.stateActive .houseSvg   { filter: drop-shadow(0 0 5px var(--color-match)); }
+.circleHouse.stateCompare .houseSvg  { filter: drop-shadow(0 0 5px var(--color-compare)); }
+.circleHouse.stateExcluded .houseSvg { opacity: 0.4; }
+
+.houseVal {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.houseIdx {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── Two-pass dp strips ── */
+.passWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.passBlock {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-overlay);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.passBlock.passActive {
+  opacity: 1;
+  border-color: var(--color-special);
+}
+
+.passLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-special);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.dpRow {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dpChip {
+  width: 44px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-overlay);
+  font-weight: 700;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+.dpCurrent { border-color: var(--color-current); background: var(--color-current-bg); color: var(--color-current); }
+.dpMatch   { border-color: var(--color-match);   background: var(--color-match-bg);   color: var(--color-match); }
+.dpCompare { border-color: var(--color-compare); background: var(--color-compare-bg); color: var(--color-compare); }
+.dpSpecial { border-color: #a78bfa; background: #ede9fe; color: #7c3aed; }
+.dpNull    { opacity: .35; }
+
+.passResult {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-match);
+  font-family: var(--font-mono);
+  margin-left: 4px;
+}
+
+.subLabel { font-size: 12px; font-weight: 700; color: var(--color-special); letter-spacing: .02em; }
+.subResult { font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }

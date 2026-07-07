@@ -1,0 +1,101 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* ── Result badge ── */
+.resultBadge {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 8px;
+}
+
+.resultInner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resultTrue {
+  background: var(--color-match-bg);
+  color: var(--color-match);
+  border: 2px solid var(--color-match);
+}
+
+.resultFalse {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+.statusIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* ── Node row ── */
+.nodeRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nodeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px 6px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg-surface);
+  min-width: 50px;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.nodeBox.nodeCurrent {
+  border-color: var(--color-current);
+  background: var(--color-current-bg);
+  transform: scale(1.1);
+}
+
+.nodeBox.nodeDone {
+  border-color: var(--color-match);
+  background: var(--color-match-bg);
+}
+
+.nodeBox.nodeError {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+.crownIcon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.nodeLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+[data-theme="light"] .nodeBox {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}

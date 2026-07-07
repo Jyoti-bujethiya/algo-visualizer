@@ -1,0 +1,17 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.areaBadge{font-size:18px;font-weight:700;color:var(--color-match);padding:4px 18px;background:var(--color-match-bg);border:2px solid var(--color-match);border-radius:8px;font-family:var(--font-mono)}
+.histogram{display:flex;align-items:flex-end;gap:4px;height:160px;padding:0 8px;background:var(--bg-surface);border:1px solid var(--border);border-radius:8px}
+.barWrap{display:flex;flex-direction:column;align-items:center;gap:2px}
+.bar,.barCurrent,.barStack,.barBest,.barDone{min-width:36px;border-radius:4px 4px 0 0;transition:background .15s}
+.bar{background:var(--bg-overlay);border:2px solid var(--border)}
+.barCurrent{background:var(--color-current-bg);border:2px solid var(--color-current)}
+.barStack{background:var(--color-compare-bg);border:2px solid var(--color-compare)}
+.barBest{background:var(--color-match-bg);border:2px solid var(--color-match)}
+.barDone{background:var(--color-discard-bg);border:2px solid var(--color-discard);opacity:.5}
+.barLabel{font-size:11px;color:var(--text-muted);font-family:var(--font-mono)}
+.stackRow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.stackCell{min-width:44px;height:44px;padding:2px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:6px;background:var(--bg-overlay);font-weight:700;font-size:13px;font-family:var(--font-mono);color:var(--text-primary);line-height:1.2}
+.stackTop{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.tempLbl{font-size:10px;color:var(--text-muted)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

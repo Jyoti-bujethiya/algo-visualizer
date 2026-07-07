@@ -1,0 +1,12 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.resultBadge{font-size:16px;font-weight:700;padding:4px 16px;border-radius:8px;font-family:var(--font-mono)}
+.resultFound{border:2px solid var(--color-match);color:var(--color-match);background:var(--color-match-bg)}
+.resultNone{border:2px solid var(--color-error);color:var(--color-error);background:var(--color-error-bg)}
+.matrixWrap{display:flex;flex-direction:column;align-items:center;gap:4px}
+.matrixRow{display:flex;gap:4px}
+.cell{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:6px;background:var(--bg-overlay);font-weight:700;font-size:14px;font-family:var(--font-mono);color:var(--text-primary);transition:background .15s,border-color .15s}
+.cellCurrent{border-color:var(--color-current);background:var(--color-current-bg);color:var(--color-current)}
+.cellCompare{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.cellMatch{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match)}
+.indexLabel{font-size:11px;color:var(--text-muted);font-family:var(--font-mono)}

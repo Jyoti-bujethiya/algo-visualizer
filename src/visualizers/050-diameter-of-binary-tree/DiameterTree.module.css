@@ -1,0 +1,81 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* ── Diameter ruler row ── */
+.diameterWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 16px;
+}
+
+.diameterLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.diameterBadge {
+  font-size: 24px;
+  font-weight: 800;
+  color: #92400e;
+  background: #fef9c3;
+  border: 2px solid #ca8a04;
+  border-radius: 8px;
+  padding: 2px 14px;
+  font-family: var(--font-mono);
+  min-width: 44px;
+  text-align: center;
+}
+
+.rulerSvg {
+  display: block;
+  height: 28px;
+  max-width: 180px;
+}
+
+/* ── Depth bubbles ── */
+.depthRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.depthLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.bubbles {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.depthBubble {
+  width: 40px;
+  height: 44px;
+  display: block;
+}
+
+[data-theme="light"] .diameterWrap {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}

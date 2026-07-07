@@ -1,0 +1,677 @@
+/* ── ProblemTab — LeetCode-style split layout ────────────────────────────── */
+
+.root {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  height: 100%;
+  background: var(--bg-page);
+}
+
+/* ── Splitter ─────────────────────────────────────────────────────────────── */
+.splitter {
+  width: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* LEFT — Problem description pane                                            */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.descPane {
+  width: 42%;
+  min-width: 300px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--bg-surface);
+  flex-shrink: 0;
+}
+
+.descInner {
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-height: 100%;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.descHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.descTitleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.descId {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  background: var(--bg-overlay);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px 7px;
+  flex-shrink: 0;
+}
+
+.descTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.descMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Difficulty badges */
+.diffBadge {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.diffEasy {
+  color: var(--diff-easy);
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.diffMedium {
+  color: var(--diff-medium);
+  background: rgba(210, 153, 34, 0.12);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+}
+
+.diffHard {
+  color: var(--diff-hard);
+  background: rgba(248, 81, 73, 0.12);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+}
+
+.descTag {
+  font-size: var(--font-size-xs);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: var(--bg-overlay);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Sections ────────────────────────────────────────────────────────────── */
+.descSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.descLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.descLabelIcon {
+  font-size: 13px;
+}
+
+.descText {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Example block ───────────────────────────────────────────────────────── */
+.exBlock {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.exBlock code {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ── Insight box ─────────────────────────────────────────────────────────── */
+.insightBox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(56, 139, 253, 0.07);
+  border: 1px solid var(--border-accent);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.insightIcon {
+  flex-shrink: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── Hints collapsible ───────────────────────────────────────────────────── */
+.hintsDetails {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.hintsSummary {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg-overlay);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hintsSummary::before {
+  content: '💡';
+  font-size: 13px;
+}
+
+.hintsDetails[open] .hintsSummary {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+}
+
+.hintsSummary:hover {
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.hintsList {
+  margin: 0;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--bg-surface);
+}
+
+.hintItem {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── LeetCode link ───────────────────────────────────────────────────────── */
+.lcLink {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: transparent;
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background var(--transition-fast);
+}
+
+.lcLink:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
+  background: var(--accent-subtle);
+}
+
+.lcInlineLink {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* RIGHT — Code compiler pane                                                  */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.compilerPane {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+
+/* ── Top bar: language tabs + run button ────────────────────────────────── */
+.compilerTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: var(--space-4);
+}
+
+.langBar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.langTab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.langTab:hover {
+  color: var(--text-primary);
+}
+
+.langTabActive {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--accent) !important;
+}
+
+.langDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Run button ─────────────────────────────────────────────────────────── */
+.runBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition-fast), opacity var(--transition-fast);
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+}
+
+.runBtn:hover:not(:disabled) { background: var(--accent-hover); }
+.runBtn:disabled              { opacity: 0.55; cursor: not-allowed; }
+.runBtnLoading                { opacity: 0.75; }
+
+.runSpinner {
+  width: 11px;
+  height: 11px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Code editor ─────────────────────────────────────────────────────────── */
+.editorWrap {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-sunken);
+}
+
+/* ── Highlight overlay editor ───────────────────────────────────────────── */
+
+/* Shared metrics — both layers must be pixel-identical */
+.hlEditorRoot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+
+/* Shared text metrics applied to both children */
+.hlPre,
+.hlTextarea {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  tab-size: 4;
+  white-space: pre;
+  overflow-wrap: normal;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Highlighted layer — sits behind, pointer-events off */
+.hlPre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  /* reset <pre> browser defaults */
+  border-radius: 0;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+/* Editable layer — sits on top, transparent background/text so colors show through */
+.hlTextarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--text-primary);
+  border: none;
+  outline: none;
+  resize: none;
+  z-index: 1;
+  /* must NOT have a spellcheck underline */
+  -webkit-text-fill-color: transparent;
+}
+
+.hlTextarea::selection {
+  background: rgba(56, 139, 253, 0.28);
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── hljs token colours (scoped to this editor) ─────────────────────────── */
+.hlPre :global(.hljs-keyword)          { color: #ff7b72; }   /* red-pink  */
+.hlPre :global(.hljs-built_in)         { color: #ffa657; }   /* amber     */
+.hlPre :global(.hljs-type)             { color: #79c0ff; }   /* blue      */
+.hlPre :global(.hljs-literal)          { color: #79c0ff; }
+.hlPre :global(.hljs-number)           { color: #79c0ff; }
+.hlPre :global(.hljs-operator)         { color: #e6edf3; }
+.hlPre :global(.hljs-punctuation)      { color: #e6edf3; }
+.hlPre :global(.hljs-property)         { color: #e6edf3; }
+.hlPre :global(.hljs-string)           { color: #a5d6ff; }   /* light blue */
+.hlPre :global(.hljs-comment)          { color: #8b949e; font-style: italic; }
+.hlPre :global(.hljs-doctag)           { color: #8b949e; font-style: italic; }
+.hlPre :global(.hljs-title)            { color: #d2a8ff; }   /* purple    */
+.hlPre :global(.hljs-title.class_)     { color: #d2a8ff; }
+.hlPre :global(.hljs-title.function_)  { color: #d2a8ff; }
+.hlPre :global(.hljs-params)           { color: #e6edf3; }
+.hlPre :global(.hljs-variable)         { color: #ffa657; }
+.hlPre :global(.hljs-variable.language_) { color: #ff7b72; }
+.hlPre :global(.hljs-attr)             { color: #79c0ff; }
+.hlPre :global(.hljs-symbol)           { color: #79c0ff; }
+.hlPre :global(.hljs-meta)             { color: #8b949e; }
+.hlPre :global(.hljs-subst)            { color: #e6edf3; }
+.hlPre :global(.hljs-section)          { color: #79c0ff; font-weight: bold; }
+.hlPre :global(.hljs-emphasis)         { font-style: italic; }
+.hlPre :global(.hljs-strong)           { font-weight: bold; }
+
+/* Light theme token overrides */
+[data-theme="light"] .hlPre :global(.hljs-keyword)         { color: #cf222e; }
+[data-theme="light"] .hlPre :global(.hljs-built_in)        { color: #953800; }
+[data-theme="light"] .hlPre :global(.hljs-type)            { color: #0550ae; }
+[data-theme="light"] .hlPre :global(.hljs-literal)         { color: #0550ae; }
+[data-theme="light"] .hlPre :global(.hljs-number)          { color: #0550ae; }
+[data-theme="light"] .hlPre :global(.hljs-string)          { color: #0a3069; }
+[data-theme="light"] .hlPre :global(.hljs-comment)         { color: #8c959f; }
+[data-theme="light"] .hlPre :global(.hljs-title)           { color: #8250df; }
+[data-theme="light"] .hlPre :global(.hljs-title.class_)    { color: #8250df; }
+[data-theme="light"] .hlPre :global(.hljs-title.function_) { color: #8250df; }
+[data-theme="light"] .hlPre :global(.hljs-variable)        { color: #953800; }
+[data-theme="light"] .hlPre :global(.hljs-meta)            { color: #8c959f; }
+[data-theme="light"] .hlPre :global(.hljs-operator)        { color: #1f2328; }
+[data-theme="light"] .hlPre :global(.hljs-punctuation)     { color: #1f2328; }
+[data-theme="light"] .hlTextarea { caret-color: #1f2328; }
+
+/* ── I/O section ─────────────────────────────────────────────────────────── */
+.ioSection {
+  border-top: 1px solid var(--border);
+  background: var(--bg-surface);
+  flex-shrink: 0;
+}
+
+.ioRow {
+  display: flex;
+  gap: 0;
+}
+
+.ioCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-3) var(--space-4);
+  border-right: 1px solid var(--border);
+}
+
+.ioCol:last-child {
+  border-right: none;
+}
+
+.ioLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.ioTextarea {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 7px 9px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+}
+
+.ioTextarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.outputPre {
+  margin: 0;
+  padding: 7px 9px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 62px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.outputPlaceholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── "Running…" pulse ──────────────────────────────────────────────────── */
+.outRunning {
+  color: var(--accent);
+  animation: outputPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes outputPulse {
+  from { opacity: 0.5; }
+  to   { opacity: 1;   }
+}
+
+/* ── Per-line color classes ─────────────────────────────────────────────── */
+
+/* Success stdout */
+.outOk    { color: var(--color-match); }
+
+/* Plain stdout */
+.outPlain { color: var(--text-primary); }
+
+/* Compiler / runtime error lines */
+.outErr {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+/* Warning lines */
+.outWarn {
+  color: var(--color-special);  /* amber */
+  font-weight: 600;
+}
+
+/* Source-pointer lines  ( ^~~~~ ) */
+.outPtr {
+  color: var(--color-error);
+  opacity: 0.7;
+}
+
+/* File:line:col location lines */
+.outLoc {
+  color: var(--text-code);  /* blue */
+}
+
+/* Note / info lines */
+.outNote {
+  color: var(--color-compare);  /* purple */
+}
+
+/* ── Status badge ────────────────────────────────────────────────────────── */
+.runBadge {
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--bg-overlay);
+  color: var(--text-muted);
+}
+
+.runBadgeOk  {
+  background: var(--color-match-bg);
+  color: var(--color-match);
+  border: 1px solid var(--color-match-border);
+}
+
+.runBadgeErr {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error-border);
+}
+
+/* ── Light theme overrides ───────────────────────────────────────────────── */
+[data-theme="light"] .descPane        { background: var(--bg-surface); }
+[data-theme="light"] .compilerPane    { background: var(--bg-sunken);  }
+[data-theme="light"] .editor          { background: var(--bg-sunken);  }
+[data-theme="light"] .ioSection       { background: var(--bg-surface); }
+[data-theme="light"] .ioTextarea      { background: var(--bg-sunken);  }
+[data-theme="light"] .outputPre       { background: var(--bg-sunken);  }
+[data-theme="light"] .insightBox      { background: rgba(9,105,218,0.06); }
+[data-theme="light"] .diffMedium      {
+  color: var(--diff-medium);
+  background: rgba(154, 103, 0, 0.1);
+  border-color: rgba(154, 103, 0, 0.3);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .root {
+    flex-direction: column;
+  }
+
+  .descPane {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border-bottom: 1px solid var(--border);
+    max-height: 50%;
+  }
+
+  .splitter {
+    display: none;
+  }
+}

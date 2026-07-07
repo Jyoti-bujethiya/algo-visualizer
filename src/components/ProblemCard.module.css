@@ -1,0 +1,158 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color var(--transition-base),
+              background var(--transition-base),
+              transform var(--transition-base),
+              box-shadow var(--transition-base);
+  overflow: hidden;
+}
+
+/* Left accent bar */
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--border-strong);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  transition: background var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--border-glow);
+  background: var(--bg-overlay);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-accent);
+}
+
+.card:hover::before {
+  background: var(--grad-accent);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.id {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Difficulty badge */
+.diff {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.easy   {
+  color: var(--diff-easy);
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+.medium {
+  color: var(--diff-medium);
+  background: rgba(210, 153, 34, 0.12);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+}
+.hard   {
+  color: var(--diff-hard);
+  background: rgba(248, 81, 73, 0.12);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+}
+
+/* Title */
+.title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.card:hover .title {
+  color: var(--accent-hover);
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+}
+
+.tag {
+  font-size: var(--font-size-xs);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.card:hover .tag {
+  border-color: var(--border-strong);
+  color: var(--text-secondary);
+}
+
+/* ── Done state ──────────────────────────────────────────────────────────── */
+.cardDone {
+  border-color: rgba(63, 185, 80, 0.35) !important;
+}
+
+.cardDone::before {
+  background: #3fb950 !important;
+}
+
+.doneCheck {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-3);
+  width: 20px;
+  height: 20px;
+  background: #3fb950;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Light mode overrides ─────────────────────────────────────────────────── */
+[data-theme="light"] .card {
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="light"] .tag {
+  background: var(--bg-page);
+}

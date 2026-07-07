@@ -1,0 +1,16 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.listsGrid{display:flex;flex-direction:column;gap:8px;align-self:flex-start;padding-left:8px}
+.listRow{display:flex;align-items:center;gap:6px}
+.listLabel{font-size:12px;font-weight:700;color:var(--text-muted);font-family:var(--font-mono);min-width:24px}
+.listCell{min-width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:6px;background:var(--bg-overlay);font-weight:700;font-size:14px;font-family:var(--font-mono);color:var(--text-primary);transition:all .15s}
+.cellDone{background:var(--color-discard-bg);border-color:var(--color-discard);opacity:.5}
+.cellHeap{background:var(--color-compare-bg);border-color:var(--color-compare);color:var(--color-compare)}
+.cellCurrent{background:var(--color-current-bg);border-color:var(--color-current);color:var(--color-current);transform:scale(1.1)}
+.heapRow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.heapCell{min-width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:50%;background:var(--bg-overlay);font-weight:700;font-size:14px;font-family:var(--font-mono);color:var(--text-primary);line-height:1.1}
+.heapRoot{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special);transform:scale(1.12)}
+.listLbl{font-size:9px;color:var(--text-muted)}
+.mergedRow{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.mergedCell{min-width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-match);border-radius:6px;background:var(--color-match-bg);font-weight:700;font-size:14px;font-family:var(--font-mono);color:var(--color-match)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

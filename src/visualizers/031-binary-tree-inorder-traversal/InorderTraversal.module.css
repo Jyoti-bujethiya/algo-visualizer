@@ -1,0 +1,70 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.stackRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.stackLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.stackCell {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-visiting, #f59e0b);
+  border-radius: 6px;
+  background: #fffbeb;
+  font-weight: 700;
+  font-size: 14px;
+  color: #92400e;
+}
+
+.resultRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.resultLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.resultCell {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-done, #22c55e);
+  border-radius: 6px;
+  background: #f0fdf4;
+  font-weight: 700;
+  font-size: 14px;
+  color: #166534;
+  transition: transform 0.15s;
+}
+
+.resultNew {
+  transform: scale(1.15);
+  border-color: #16a34a;
+  background: #dcfce7;
+}

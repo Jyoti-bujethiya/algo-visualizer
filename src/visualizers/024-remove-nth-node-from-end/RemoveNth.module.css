@@ -1,0 +1,4 @@
+.canvas { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-4); }
+.listLabel { font-size: var(--font-size-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); margin-bottom: var(--space-1); }
+.listRow { display: flex; flex-direction: column; gap: var(--space-2); }
+.resultBadge { align-self: flex-start; padding: var(--space-2) var(--space-5); border-radius: var(--radius-sm); background: var(--color-match-bg); border: 1px solid var(--color-match-border); color: var(--color-match); font-size: var(--font-size-sm); font-weight: 600; }

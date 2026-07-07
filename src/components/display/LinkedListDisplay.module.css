@@ -1,0 +1,141 @@
+.wrap {
+  padding: var(--space-5) var(--space-4);
+  overflow-x: auto;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.listRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+/* Label for the list name (e.g. "original", "reversed") */
+.rowLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+/* Node box */
+.nodeWrap {
+  display: flex;
+  align-items: center;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ptrRow {
+  height: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+}
+
+.nodeLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-bottom: 3px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.nodeBox {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background: var(--bg-overlay);
+  border: 2px solid var(--border-strong);
+  color: var(--text-primary);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Arrow between nodes */
+.arrow {
+  display: flex;
+  align-items: center;
+  color: var(--border-strong);
+  font-size: 20px;
+  margin: 0 3px;
+  padding-top: 28px; /* align with centre of box */
+  line-height: 1;
+}
+
+.arrowReversed {
+  color: var(--color-match);
+}
+
+/* NULL terminal */
+.null {
+  padding-top: 28px;
+  margin-left: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ── Highlight states ─────────────────────────────────────────────────────── */
+.current {
+  background: var(--color-current-bg)  !important;
+  border-color: var(--color-current-border)  !important;
+  color: var(--color-current)  !important;
+  box-shadow: 0 0 0 3px var(--color-current-border), var(--shadow-sm) !important;
+}
+.compare {
+  background: var(--color-compare-bg)  !important;
+  border-color: var(--color-compare-border)  !important;
+  color: var(--color-compare)  !important;
+  box-shadow: 0 0 0 3px var(--color-compare-border), var(--shadow-sm) !important;
+}
+.match {
+  background: var(--color-match-bg)    !important;
+  border-color: var(--color-match-border)    !important;
+  color: var(--color-match)    !important;
+  box-shadow: 0 0 0 3px var(--color-match-border), var(--shadow-sm) !important;
+}
+.special {
+  background: var(--color-special-bg)  !important;
+  border-color: var(--color-special-border)  !important;
+  color: var(--color-special)  !important;
+  box-shadow: 0 0 0 3px var(--color-special-border), var(--shadow-sm) !important;
+}
+.discard {
+  background: var(--color-discard-bg)  !important;
+  border-color: var(--color-discard-border)  !important;
+  color: var(--color-discard)  !important;
+  opacity: 0.65;
+}
+.error {
+  background: var(--color-error-bg)    !important;
+  border-color: var(--color-error-border)    !important;
+  color: var(--color-error)    !important;
+  box-shadow: 0 0 0 3px var(--color-error-border), var(--shadow-sm) !important;
+}
+
+/* ── Light mode ── */
+[data-theme="light"] .nodeBox {
+  background: #ffffff;
+  border-color: var(--border-strong);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}

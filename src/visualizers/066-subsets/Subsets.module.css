@@ -1,0 +1,148 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Nums row ── */
+.numsRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.numEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.treeNodeIcon {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.numIdx {
+  font-size: 9px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── Path wrap ── */
+.pathWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  min-width: 240px;
+}
+
+.pathLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pathRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.pathEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.branchIcon {
+  width: 28px;
+  height: 20px;
+  display: block;
+}
+
+/* ── Count badge ── */
+.countBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-special);
+  padding: 3px 14px;
+  background: var(--color-special-bg);
+  border: 2px solid var(--color-special);
+  border-radius: 8px;
+}
+
+.countIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Result grid ── */
+.resultGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  max-width: 540px;
+}
+
+.resultChip {
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1.5px solid var(--color-match);
+  background: var(--color-match-bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-match);
+  transition: border-color 0.15s;
+}
+
+.resultChipNew {
+  border-color: var(--color-current) !important;
+  background: var(--color-current-bg) !important;
+  color: var(--color-current) !important;
+  font-weight: 800;
+}
+
+/* ── Legacy fallback ── */
+.currentRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.currentLabel { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.currentChip {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--color-current);
+  background: var(--color-current-bg);
+  font-family: var(--font-mono);
+  font-size: 14px; font-weight: 700;
+  color: var(--color-current);
+}
+.empty { font-size: 14px; color: var(--text-muted); font-style: italic; }

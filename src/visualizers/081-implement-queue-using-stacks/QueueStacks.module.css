@@ -1,0 +1,12 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:20px;padding:14px 0}
+.twoCol{display:flex;gap:24px;align-items:center}
+.col{display:flex;flex-direction:column;align-items:center;gap:8px}
+.colLabel{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+.stackCol{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:80px;min-width:64px}
+.cell{min-width:56px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:6px;background:var(--bg-overlay);font-weight:700;font-size:15px;font-family:var(--font-mono);color:var(--text-primary)}
+.cellTop{border-color:var(--color-current);background:var(--color-current-bg);color:var(--color-current)}
+.cellOut{border-color:var(--border)}
+.cellOutTop{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.arrow{font-size:28px;color:var(--text-muted);font-weight:300;margin-top:32px}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic;padding:12px}
+.resultBadge{font-size:16px;font-weight:700;color:var(--color-match);padding:5px 16px;background:var(--color-match-bg);border:2px solid var(--color-match);border-radius:8px;font-family:var(--font-mono)}

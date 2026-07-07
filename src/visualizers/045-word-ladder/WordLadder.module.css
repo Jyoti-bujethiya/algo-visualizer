@@ -1,0 +1,140 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.wordGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 540px;
+}
+
+.wordChip {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--bg-overlay);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: background 0.15s, border-color 0.15s;
+  cursor: default;
+}
+
+.wordInner {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* Changed letter highlight */
+.changedLetter {
+  color: #dc2626;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 800;
+}
+
+.wordChipBegin {
+  border-color: var(--color-special);
+  background: var(--color-special-bg);
+  color: var(--color-special);
+}
+
+.wordChipEnd {
+  border-color: var(--color-match);
+  background: var(--color-match-bg);
+  color: var(--color-match);
+}
+
+.wordChipCurrent {
+  border-color: var(--color-current);
+  background: var(--color-current-bg);
+  color: var(--color-current);
+  transform: scale(1.08);
+}
+
+.wordChipQueued {
+  border-color: var(--color-compare);
+  background: var(--color-compare-bg);
+  color: var(--color-compare);
+}
+
+.wordChipDone {
+  border-color: var(--color-discard);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.wordChipFound {
+  border-color: var(--color-match);
+  background: var(--color-match-bg);
+  color: var(--color-match);
+  transform: scale(1.12);
+}
+
+.resultBadge {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 8px;
+}
+
+.resultFound {
+  background: var(--color-match-bg);
+  color: var(--color-match);
+  border: 2px solid var(--color-match);
+}
+
+.resultNone {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+/* ── Ladder path ── */
+.ladderPath {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+
+.ladderStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.rungWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.ladderRung {
+  width: 20px;
+  height: 32px;
+  display: block;
+}
+
+[data-theme="light"] .wordChip {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #374151;
+}
+
+[data-theme="light"] .ladderPath {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}

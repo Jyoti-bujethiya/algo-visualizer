@@ -1,0 +1,108 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.solutionBadge {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-match);
+  padding: 4px 16px;
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+/* ── Board grid ── */
+.board {
+  display: inline-grid;
+  gap: 0;
+  border: 3px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+
+.cell {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,.08);
+  transition: background 0.18s;
+  position: relative;
+}
+
+/* Chess squares */
+.cellLight { background: #f0d9b5; }
+.cellDark  { background: #b58863; }
+
+/* Queen placed — golden glow */
+.cellQueen {
+  background: #fef3c7 !important;
+  box-shadow: inset 0 0 0 2px #f59e0b;
+}
+
+/* Currently trying — blue pulse */
+.cellTrying {
+  background: var(--color-current-bg) !important;
+  box-shadow: inset 0 0 0 2px var(--color-current);
+}
+
+/* Under attack — red tint */
+.cellError {
+  background: #fee2e2 !important;
+  box-shadow: inset 0 0 0 2px #ef4444;
+}
+
+/* Backtracked */
+.cellDone {
+  opacity: 0.45;
+}
+
+/* Full solution found — green */
+.cellSolution {
+  background: #dcfce7 !important;
+  box-shadow: inset 0 0 0 2px #16a34a;
+}
+
+/* Queen SVG */
+.queenSvg {
+  width: 38px;
+  height: 38px;
+  display: block;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,.25));
+}
+
+/* X mark for attacked cells */
+.xMarkSvg {
+  width: 28px;
+  height: 28px;
+  display: block;
+  opacity: 0.65;
+}
+
+/* Solutions row */
+.solutionsRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 480px;
+}
+
+.solChip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--color-match-bg);
+  border: 1.5px solid var(--color-match);
+  color: var(--color-match);
+  font-weight: 700;
+}

@@ -1,0 +1,168 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* ── Result badge ── */
+.resultBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-match);
+  padding: 5px 16px;
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.resultIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Bar chart ── */
+.barChart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 8px 12px 4px;
+  background: var(--bg-surface);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  min-height: 200px;
+}
+
+.barCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dpBadge {
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 5px;
+  border: 1.5px solid;
+  padding: 1px 5px;
+  font-family: var(--font-mono);
+  min-width: 20px;
+  text-align: center;
+}
+
+.bar {
+  width: 26px;
+  border-radius: 4px 4px 0 0;
+  transition: background 0.2s, height 0.2s, box-shadow 0.2s;
+}
+
+.barNumLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* ── LIS chain row ── */
+.chainRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 6px 14px;
+}
+
+.chainLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 4px;
+}
+
+.chainEl {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.chainNum {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1d4ed8;
+  font-family: var(--font-mono);
+  background: white;
+  border: 1.5px solid #3b82f6;
+  border-radius: 5px;
+  padding: 1px 7px;
+}
+
+.chainArrow {
+  width: 14px;
+  height: 18px;
+  display: block;
+}
+
+/* ── Tails deck ── */
+.tailsDeck {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tailsLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 4px;
+}
+
+.tailCard {
+  width: 40px;
+  height: 48px;
+  display: block;
+}
+
+.tailsRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tailsCell {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-special);
+  border-radius: 6px;
+  background: var(--color-special-bg);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-special);
+  font-family: var(--font-mono);
+}

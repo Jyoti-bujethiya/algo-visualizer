@@ -1,0 +1,10 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:18px;padding:14px 0}
+.twoCol{display:flex;gap:32px;align-items:flex-start}
+.col{display:flex;flex-direction:column;align-items:center;gap:8px}
+.colLabel{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+.stackCol{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:80px}
+.stackCell{width:60px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:6px;background:var(--bg-overlay);font-weight:700;font-size:15px;font-family:var(--font-mono);color:var(--text-primary)}
+.minCell{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special)}
+.stackTop{border-color:var(--color-current);background:var(--color-current-bg);color:var(--color-current)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic;padding:8px}
+.minBadge{font-size:16px;font-weight:700;padding:5px 16px;border-radius:8px;color:var(--color-special);background:var(--color-special-bg);border:2px solid var(--color-special);font-family:var(--font-mono)}

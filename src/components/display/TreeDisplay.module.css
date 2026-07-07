@@ -1,0 +1,151 @@
+.wrap {
+  padding: var(--space-4);
+  overflow: auto;
+  min-height: 260px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.svg {
+  overflow: visible;
+}
+
+/* Edges */
+.edge {
+  stroke: var(--border-strong);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.edgeThread {
+  stroke: var(--color-special);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 3;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* Node circle */
+.nodeCircle {
+  fill: var(--bg-overlay);
+  stroke: var(--border-strong);
+  stroke-width: 2.5;
+  transition: fill 0.15s ease, stroke 0.15s ease, filter 0.15s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.35));
+}
+
+.nodeText {
+  fill: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  dominant-baseline: central;
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Highlight states ─────────────────────────────────────────────────────── */
+.current {
+  fill: var(--color-current-bg) !important;
+  stroke: var(--color-current) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-current-border)) !important;
+}
+.compare {
+  fill: var(--color-compare-bg) !important;
+  stroke: var(--color-compare) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-compare-border)) !important;
+}
+.match {
+  fill: var(--color-match-bg)   !important;
+  stroke: var(--color-match)   !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-match-border)) !important;
+}
+.special {
+  fill: var(--color-special-bg) !important;
+  stroke: var(--color-special) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-special-border)) !important;
+}
+.discard {
+  fill: var(--color-discard-bg) !important;
+  stroke: var(--color-discard) !important;
+  opacity: 0.5;
+}
+.error {
+  fill: var(--color-error-bg)   !important;
+  stroke: var(--color-error)   !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-error-border)) !important;
+}
+
+/* Traversal order result row */
+.resultRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-overlay);
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  min-height: 44px;
+}
+
+.resultLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.resultNode {
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  background: var(--color-match-bg);
+  border: 1px solid var(--color-match-border);
+  color: var(--color-match);
+}
+
+.resultArrow {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* ── Light mode ── */
+[data-theme="light"] .nodeCircle {
+  fill: #ffffff;
+  stroke: var(--border-strong);
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12));
+}
+
+[data-theme="light"] .current {
+  filter: drop-shadow(0 0 5px var(--color-current-border)) !important;
+}
+[data-theme="light"] .compare {
+  filter: drop-shadow(0 0 5px var(--color-compare-border)) !important;
+}
+[data-theme="light"] .match {
+  filter: drop-shadow(0 0 5px var(--color-match-border)) !important;
+}
+[data-theme="light"] .special {
+  filter: drop-shadow(0 0 5px var(--color-special-border)) !important;
+}
+[data-theme="light"] .error {
+  filter: drop-shadow(0 0 5px var(--color-error-border)) !important;
+}
+
+[data-theme="light"] .resultRow {
+  background: #ffffff;
+  border-top-color: var(--border);
+}

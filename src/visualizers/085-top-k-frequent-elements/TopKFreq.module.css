@@ -1,0 +1,12 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.resultBadge{font-size:16px;font-weight:700;color:var(--color-match);padding:4px 16px;background:var(--color-match-bg);border:2px solid var(--color-match);border-radius:8px;font-family:var(--font-mono)}
+.freqRow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.freqChip{padding:5px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg-overlay);font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--text-primary)}
+.freqKept{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match)}
+.freqDiscard{border-color:var(--color-discard);background:var(--color-discard-bg);color:var(--color-discard);opacity:.6}
+.heapRow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.heapCell{min-width:52px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:50%;background:var(--bg-overlay);font-weight:700;font-size:14px;font-family:var(--font-mono);color:var(--text-primary);line-height:1.1}
+.heapRoot{border-color:var(--color-special)!important;background:var(--color-special-bg)!important;color:var(--color-special)!important}
+.freqLbl{font-size:10px;color:var(--text-muted)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

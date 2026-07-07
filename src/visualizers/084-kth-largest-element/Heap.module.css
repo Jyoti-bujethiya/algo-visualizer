@@ -1,0 +1,15 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.resultBadge{font-size:18px;font-weight:700;color:var(--color-match);padding:4px 18px;background:var(--color-match-bg);border:2px solid var(--color-match);border-radius:8px;font-family:var(--font-mono)}
+.heapRow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.heapCell{min-width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:50%;background:var(--bg-overlay);font-weight:700;font-size:15px;font-family:var(--font-mono);color:var(--text-primary)}
+.heapRoot{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special);transform:scale(1.1)}
+.rootLabel{font-size:12px;color:var(--text-muted);font-family:var(--font-mono)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}
+.twoHeap{display:flex;gap:32px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.heapBlock{display:flex;flex-direction:column;align-items:center;gap:8px}
+.heapTitle{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.medianBadge{font-size:16px;font-weight:700;color:var(--color-special);padding:4px 16px;background:var(--color-special-bg);border:2px solid var(--color-special);border-radius:8px;font-family:var(--font-mono)}
+.pointsWrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:500px}
+.point{padding:6px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg-overlay);font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text-primary)}
+.pointSelected{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match)}

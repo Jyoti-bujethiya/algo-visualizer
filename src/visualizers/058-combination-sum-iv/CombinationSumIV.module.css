@@ -1,0 +1,120 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* ── Result badge ── */
+.resultBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-match);
+  padding: 5px 16px;
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.comboIcon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Top row: nums + gauge ── */
+.topRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.numsPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.gaugePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.panelLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tilesRow {
+  display: flex;
+  gap: 6px;
+}
+
+/* ── Tile + gauge SVGs ── */
+.numTile {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.gaugeIcon {
+  width: 52px;
+  height: 52px;
+  display: block;
+}
+
+/* ── Old num chip (fallback) ── */
+.numsRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.numsLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.numChip {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-special-bg);
+  border: 2px solid var(--color-special);
+  color: var(--color-special);
+  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--font-mono);
+}

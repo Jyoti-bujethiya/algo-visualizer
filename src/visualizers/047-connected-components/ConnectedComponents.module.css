@@ -1,0 +1,60 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.countBadge {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 16px;
+  background: var(--color-special-bg);
+  border: 2px solid var(--color-special);
+  border-radius: 8px;
+  color: var(--color-special);
+}
+
+/* ── Component groups ── */
+.groupsRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.groupPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 2px solid;
+  min-width: 60px;
+}
+
+.groupTitle {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.groupNodes {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.componentNode {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+[data-theme="light"] .groupPanel {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}

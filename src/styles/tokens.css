@@ -1,0 +1,196 @@
+/* ─── Design Tokens ────────────────────────────────────────────────────────
+   Single source of truth for every color, border, and spacing value.
+   All component styles reference var(--xxx) — zero hardcoded colors.
+   ─────────────────────────────────────────────────────────────────────── */
+
+/* ── Default = Dark theme ─────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --theme: dark;
+
+  /* Backgrounds */
+  --bg-page:       #0d1117;
+  --bg-surface:    #161b22;
+  --bg-sunken:     #0a0d12;
+  --bg-overlay:    #21262d;
+  --bg-glass:      rgba(22, 27, 34, 0.85);
+
+  /* Borders */
+  --border:        #30363d;
+  --border-strong: #484f58;
+  --border-accent: rgba(56, 139, 253, 0.25);
+  --border-glow:   rgba(56, 139, 253, 0.5);
+
+  /* Text */
+  --text-primary:  #e6edf3;
+  --text-secondary:#8b949e;
+  --text-muted:    #6e7681;
+  --text-code:     #79c0ff;
+
+  /* Accent — one color, used for active/selected UI states */
+  --accent:        #388bfd;
+  --accent-hover:  #58a6ff;
+  --accent-subtle: rgba(56, 139, 253, 0.15);
+  --accent-glow:   rgba(56, 139, 253, 0.2);
+
+  /* Gradient shorthands (use accent color, no new hues) */
+  --grad-accent:   linear-gradient(135deg, #388bfd 0%, #58a6ff 100%);
+  --grad-hero:     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(56,139,253,0.12) 0%, transparent 70%);
+
+  /* Surface alias used by some visualizer CSS */
+  --surface:       #161b22;
+
+  /* ── Semantic highlight colors (same across ALL 100 problems) ── */
+  --color-current:        #f0883e;   /* Orange  — element being examined     */
+  --color-current-bg:     rgba(240, 136,  62, 0.18);
+  --color-current-border: rgba(240, 136,  62, 0.6);
+
+  --color-match:          #3fb950;   /* Green   — found / correct            */
+  --color-match-bg:       rgba( 63, 185,  80, 0.18);
+  --color-match-border:   rgba( 63, 185,  80, 0.6);
+
+  --color-compare:        #d2a8ff;   /* Purple  — secondary pointer          */
+  --color-compare-bg:     rgba(210, 168, 255, 0.15);
+  --color-compare-border: rgba(210, 168, 255, 0.5);
+
+  --color-special:        #ffa657;   /* Amber   — pivot / mid / special node */
+  --color-special-bg:     rgba(255, 166,  87, 0.18);
+  --color-special-border: rgba(255, 166,  87, 0.6);
+
+  --color-discard:        #6e7681;   /* Grey    — eliminated / visited-done  */
+  --color-discard-bg:     rgba(110, 118, 129, 0.12);
+  --color-discard-border: rgba(110, 118, 129, 0.35);
+
+  --color-error:          #f85149;   /* Red     — conflict / mismatch        */
+  --color-error-bg:       rgba(248,  81,  73, 0.15);
+  --color-error-border:   rgba(248,  81,  73, 0.5);
+
+  /* Difficulty */
+  --diff-easy:   #3fb950;
+  --diff-medium: #d29922;
+  --diff-hard:   #f85149;
+
+  /* Scrollbar thumb (dark) */
+  --scrollbar-thumb: #484f58;
+
+  /* Spacing scale */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+
+  /* Radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+  --font-size-xs:   11px;
+  --font-size-sm:   12px;
+  --font-size-base: 14px;
+  --font-size-md:   15px;
+  --font-size-lg:   18px;
+  --font-size-xl:   22px;
+  --font-size-2xl:  28px;
+  --font-size-3xl:  38px;
+
+  /* Shell layout */
+  --shell-left-width:  300px;
+  --shell-right-width: 320px;
+  --navbar-height:     56px;
+
+  /* Effects */
+  --transition-fast:   0.12s ease;
+  --transition-base:   0.18s ease;
+  --shadow-sm:         0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md:         0 4px 14px rgba(0,0,0,0.5);
+  --shadow-lg:         0 10px 36px rgba(0,0,0,0.6);
+  --shadow-glow:       0 0 0 3px var(--accent-glow);
+  --shadow-accent:     0 4px 20px rgba(56,139,253,0.2);
+}
+
+/* ── Light theme overrides ─────────────────────────────────────────────── */
+[data-theme="light"] {
+  --theme: light;
+
+  /* Backgrounds */
+  --bg-page:       #f3f4f6;
+  --bg-surface:    #ffffff;
+  --bg-sunken:     #f0f2f5;
+  --bg-overlay:    #e8eaed;
+  --bg-glass:      rgba(255, 255, 255, 0.92);
+
+  /* Borders */
+  --border:        #d0d7de;
+  --border-strong: #afb8c1;
+  --border-accent: rgba(9, 105, 218, 0.3);
+  --border-glow:   rgba(9, 105, 218, 0.5);
+
+  /* Text */
+  --text-primary:  #1f2328;
+  --text-secondary:#57606a;
+  --text-muted:    #8c959f;
+  --text-code:     #0550ae;
+
+  /* Accent */
+  --accent:        #0969da;
+  --accent-hover:  #0550ae;
+  --accent-subtle: rgba(9, 105, 218, 0.08);
+  --accent-glow:   rgba(9, 105, 218, 0.18);
+
+  /* Gradient shorthands */
+  --grad-accent:   linear-gradient(135deg, #0969da 0%, #0550ae 100%);
+  --grad-hero:     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(9,105,218,0.08) 0%, transparent 70%);
+
+  /* Surface alias */
+  --surface:       #ffffff;
+
+  /* Semantic highlight colors — stay vibrant on white */
+  --color-current:        #d97706;
+  --color-current-bg:     rgba(217, 119,   6, 0.10);
+  --color-current-border: rgba(217, 119,   6, 0.4);
+
+  --color-match:          #16a34a;
+  --color-match-bg:       rgba( 22, 163,  74, 0.10);
+  --color-match-border:   rgba( 22, 163,  74, 0.4);
+
+  --color-compare:        #7c3aed;
+  --color-compare-bg:     rgba(124,  58, 237, 0.08);
+  --color-compare-border: rgba(124,  58, 237, 0.35);
+
+  --color-special:        #b45309;
+  --color-special-bg:     rgba(180,  83,   9, 0.10);
+  --color-special-border: rgba(180,  83,   9, 0.4);
+
+  --color-discard:        #8c959f;
+  --color-discard-bg:     rgba(140, 149, 159, 0.10);
+  --color-discard-border: rgba(140, 149, 159, 0.3);
+
+  --color-error:          #cf222e;
+  --color-error-bg:       rgba(207,  34,  46, 0.08);
+  --color-error-border:   rgba(207,  34,  46, 0.35);
+
+  /* Difficulty */
+  --diff-easy:   #1a7f37;
+  --diff-medium: #9a6700;
+  --diff-hard:   #cf222e;
+
+  /* Scrollbar thumb */
+  --scrollbar-thumb: #afb8c1;
+
+  /* Effects */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.10);
+  --shadow-md:     0 4px 14px rgba(0,0,0,0.13);
+  --shadow-lg:     0 10px 36px rgba(0,0,0,0.16);
+  --shadow-glow:   0 0 0 3px var(--accent-glow);
+  --shadow-accent: 0 4px 20px rgba(9,105,218,0.16);
+}

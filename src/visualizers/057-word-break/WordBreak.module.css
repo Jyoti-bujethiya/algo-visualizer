@@ -1,0 +1,123 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* ── Result badge ── */
+.resultBadge {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 8px;
+}
+
+.resultTrue {
+  color: var(--color-match);
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+}
+
+.resultFalse {
+  color: var(--color-error);
+  background: var(--color-error-bg);
+  border: 2px solid var(--color-error);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Word dict row ── */
+.dictRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dictChip {
+  position: relative;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 2px solid var(--color-special);
+  background: var(--color-special-bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-special);
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.dictChipMatch {
+  border-color: #16a34a !important;
+  background: #d1fae5 !important;
+  color: #14532d !important;
+  transform: scale(1.08);
+}
+
+.matchMark {
+  margin-right: 4px;
+  font-weight: 900;
+}
+
+/* ── Segmented string ── */
+.segStr {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+}
+
+/* Vertical bar segment marker */
+.segMarker {
+  color: #16a34a;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0 1px;
+}
+
+.segChar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 1px;
+  border-radius: 3px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+
+.segCharActive {
+  background: var(--color-current-bg);
+  color: var(--color-current);
+}
+
+.segCharScan {
+  background: var(--color-compare-bg);
+  color: var(--color-compare);
+}
+
+.segCharTrue {
+  color: #16a34a;
+}
+
+.sStr {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}

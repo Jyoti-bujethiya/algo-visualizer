@@ -1,0 +1,14 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:16px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.prefixBadge{font-size:14px;font-weight:700;font-family:var(--font-mono);padding:2px 12px;border-radius:6px;background:var(--color-current-bg);border:2px solid var(--color-current);color:var(--color-current)}
+.productsRow{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:520px}
+.chip{padding:6px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg-overlay);font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text-secondary);transition:all .15s}
+.chipMatch{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match)}
+.chipCompare{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.chipDone{opacity:.4}
+.suggestionsWrap{display:flex;flex-direction:column;gap:8px;width:100%;max-width:520px}
+.suggestRow{display:flex;align-items:center;gap:8px}
+.prefixKey{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--color-special);min-width:80px}
+.suggList{display:flex;gap:4px;flex-wrap:wrap}
+.suggChip{padding:4px 10px;border-radius:6px;border:2px solid var(--color-match);background:var(--color-match-bg);font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--color-match)}
+.noSugg{font-size:12px;color:var(--text-muted);font-style:italic}

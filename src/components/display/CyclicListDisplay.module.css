@@ -1,0 +1,163 @@
+.wrap {
+  overflow-x: auto;
+  padding: 8px 0 16px 0;
+}
+
+.svg {
+  display: block;
+  overflow: visible;
+}
+
+/* ── Node boxes ─────────────────────────────────────────────────────────── */
+.nodeBox {
+  fill:   var(--bg-overlay);
+  stroke: var(--border-strong);
+  stroke-width: 2.5;
+  transition: fill 0.15s ease, stroke 0.15s ease, filter 0.15s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+
+.nodeText {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--text-primary);
+  dominant-baseline: middle;
+}
+
+.nodeTextHighlighted {
+  /* colour is overridden per-state below */
+}
+
+/* ── Highlight states ───────────────────────────────────────────────────── */
+.current {
+  fill: var(--color-current-bg)  !important;
+  stroke: var(--color-current-border)  !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-current-border)) !important;
+}
+.compare {
+  fill: var(--color-compare-bg)  !important;
+  stroke: var(--color-compare-border)  !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-compare-border)) !important;
+}
+.special {
+  fill: var(--color-special-bg)  !important;
+  stroke: var(--color-special-border)  !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-special-border)) !important;
+}
+.match {
+  fill: var(--color-match-bg)    !important;
+  stroke: var(--color-match-border)    !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-match-border)) !important;
+}
+.discard {
+  fill: var(--color-discard-bg)  !important;
+  stroke: var(--color-discard-border)  !important;
+  opacity: 0.55;
+}
+.error {
+  fill: var(--color-error-bg)    !important;
+  stroke: var(--color-error-border)    !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 6px var(--color-error-border)) !important;
+}
+
+/* Apply text colour when box is highlighted — target the sibling text */
+.current ~ text, text.current { fill: var(--color-current) !important; }
+.compare ~ text, text.compare { fill: var(--color-compare) !important; }
+.special ~ text, text.special { fill: var(--color-special) !important; }
+.match   ~ text, text.match   { fill: var(--color-match)   !important; }
+.discard ~ text, text.discard { fill: var(--color-discard) !important; }
+.error   ~ text, text.error   { fill: var(--color-error)   !important; }
+
+/* ── Cycle entry ring (dashed outline around entry node) ─────────────────── */
+.cycleEntryRing {
+  fill: none;
+  stroke: var(--color-match);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 3;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 4px var(--color-match-border));
+}
+
+.cycleTail .nodeBox {
+  stroke: var(--color-special) !important;
+}
+
+/* ── Straight-line edges ────────────────────────────────────────────────── */
+.edge {
+  stroke: var(--border-strong);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.arrowHead {
+  fill: var(--border-strong);
+}
+
+/* ── Cycle arc (back-edge) ──────────────────────────────────────────────── */
+.cycleEdge {
+  fill: none;
+  stroke: var(--color-match);
+  stroke-width: 2.5;
+  stroke-dasharray: 7 3;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 4px var(--color-match-border));
+}
+
+.cycleArrowHead {
+  fill: var(--color-match);
+}
+
+.cycleLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--color-match);
+  opacity: 0.8;
+  letter-spacing: 0.04em;
+}
+
+/* ── NULL terminal ──────────────────────────────────────────────────────── */
+.nullText {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--text-muted);
+  dominant-baseline: middle;
+  letter-spacing: 0.03em;
+}
+
+/* ── Pointer label container (inside foreignObject) ─────────────────────── */
+.ptrWrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+/* ── Light mode ── */
+[data-theme="light"] .nodeBox {
+  fill: #ffffff;
+  stroke: var(--border-strong);
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.10));
+}
+
+[data-theme="light"] .current {
+  filter: drop-shadow(0 0 5px var(--color-current-border)) !important;
+}
+[data-theme="light"] .compare {
+  filter: drop-shadow(0 0 5px var(--color-compare-border)) !important;
+}
+[data-theme="light"] .special {
+  filter: drop-shadow(0 0 5px var(--color-special-border)) !important;
+}
+[data-theme="light"] .match {
+  filter: drop-shadow(0 0 5px var(--color-match-border)) !important;
+}
+[data-theme="light"] .error {
+  filter: drop-shadow(0 0 5px var(--color-error-border)) !important;
+}

@@ -1,0 +1,673 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-sunken);
+  overflow: hidden;
+}
+
+/* ── Top bar: language tabs + approach pills ─────────────────────────────── */
+.topBar {
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.langBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px var(--space-5);
+}
+
+.langTab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              box-shadow var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.langTab:hover {
+  color: var(--text-primary);
+  background: var(--bg-overlay);
+  border-color: var(--border-strong);
+}
+
+.langTabActive {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  background: transparent !important;
+}
+
+.langBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+/* ── Approach pill strip ──────────────────────────────────────────────────── */
+.approachBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px var(--space-5);
+  background: var(--bg-page);
+  border-top: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.approachBar::-webkit-scrollbar { display: none; }
+
+.approachPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              transform var(--transition-fast);
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+
+.approachPill:hover {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.approachPillActive {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: var(--shadow-accent) !important;
+}
+
+.complexityBadge {
+  font-size: 10px;
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.18);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.approachPill:not(.approachPillActive) .complexityBadge {
+  background: var(--bg-sunken);
+  color: var(--text-muted);
+}
+
+/* ── Body: side-by-side code + tutorial ──────────────────────────────────── */
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── LEFT — code pane (width driven by inline style from ResizableBody) ───── */
+.codePane {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+
+.codeToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.codeFilename {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.copyBtn {
+  padding: 3px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-overlay);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.copyBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.codeScroll {
+  flex: 1;
+  overflow: auto;
+}
+
+.codePre {
+  margin: 0;
+  padding: 20px;
+  background: transparent;
+  overflow: visible;
+}
+
+.codeEl {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ── Resize handle ───────────────────────────────────────────────────────── */
+.resizeHandle {
+  flex-shrink: 0;
+  width: 5px;
+  cursor: col-resize;
+  background: var(--border);
+  transition: background var(--transition-fast);
+  position: relative;
+}
+
+.resizeHandle:hover,
+.resizeHandle:active {
+  background: var(--accent);
+}
+
+/* Widen the hit area without affecting layout */
+.resizeHandle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -4px;
+  right: -4px;
+}
+
+/* ── RIGHT — tutorial pane (takes remaining space) ────────────────────────── */
+.tutPane {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-y: auto;
+  background: var(--bg-surface);
+}
+
+.tutInner {
+  padding: var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tutHeading {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.tutDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+.tutSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tutLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.tutIcon {
+  font-size: 13px;
+}
+
+.tutText {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.tutMuted {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Loading / error ─────────────────────────────────────────────────────── */
+.state {
+  padding: var(--space-6);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  width: 100%;
+}
+
+.stateError { color: var(--color-error); }
+
+/* ── Complexity pills ─────────────────────────────────────────────────────── */
+/* ── Legacy inline pills (kept for backward compat) ─────────────────────── */
+.cxPillRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cxPill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 5px 10px 6px;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--cx-color) 30%, transparent);
+  background: color-mix(in srgb, var(--cx-color) 8%, transparent);
+  min-width: 80px;
+}
+
+.cxPillLabel {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.cxPillNotation {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--cx-color);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.cxPillTrack {
+  width: 100%;
+  height: 3px;
+  background: color-mix(in srgb, var(--cx-color) 20%, transparent);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.cxPillFill {
+  height: 100%;
+  background: var(--cx-color);
+  border-radius: var(--radius-full);
+}
+
+/* ── Side-by-side complexity visual (Tutorial pane) ──────────────────────── */
+.cxVisual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.cxVisualCol {
+  background: var(--bg-page);
+  border: 1px solid color-mix(in srgb, var(--cx-col-color) 30%, transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cxVisualColLabel {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.cxVisualNotation {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--cx-col-color);
+}
+
+.cxVisualTrack {
+  width: 100%;
+  height: 6px;
+  background: color-mix(in srgb, var(--cx-col-color) 18%, transparent);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.cxVisualFill {
+  height: 100%;
+  background: var(--cx-col-color);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.cxVisualTier {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--cx-col-color);
+  opacity: 0.85;
+  margin-top: 1px;
+}
+
+.cxVisualNA {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .cxVisualCol {
+  background: var(--bg-sunken);
+}
+
+/* ── Responsive: stack on narrow screens ─────────────────────────────────── */
+@media (max-width: 860px) {
+  .body { flex-direction: column; }
+  .codePane { flex: none; border-right: none; border-bottom: 1px solid var(--border); min-height: 50vh; }
+  .tutPane  { flex: none; }
+}
+
+/* ── Light theme ──────────────────────────────────────────────────────────── */
+[data-theme="light"] .tutPane   { background: var(--bg-surface); }
+[data-theme="light"] .codePane  { background: var(--bg-sunken); }
+
+/* ── Step list ────────────────────────────────────────────────────────────── */
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-accent);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+
+.stepText {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Trace / example block ────────────────────────────────────────────────── */
+.exampleBlock {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.exampleBlock code { font-family: inherit; color: inherit; }
+
+/* ── Key insight highlight box ───────────────────────────────────────────── */
+.insightBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.insightIcon {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Problem banner ──────────────────────────────────────────────────────── */
+.problemBanner {
+  padding: var(--space-4);
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Run Panel ───────────────────────────────────────────────────────────── */
+.runPanel {
+  flex-shrink: 0;
+  border-top: 2px solid var(--color-match);
+}
+
+.runToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 11px 16px;
+  background: color-mix(in srgb, var(--color-match) 10%, var(--bg-surface));
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.runToggle:hover {
+  background: color-mix(in srgb, var(--color-match) 16%, var(--bg-surface));
+}
+
+.runToggleIcon {
+  font-size: 14px;
+  color: var(--color-match);
+  width: 16px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.runToggleLabel {
+  flex: 1;
+  color: var(--color-match);
+  letter-spacing: 0.01em;
+}
+
+.runBody {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  background: var(--bg-sunken);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.runSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.runLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.runTextarea {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 8px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+}
+
+.runTextarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.runBtn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition-fast), opacity var(--transition-fast);
+}
+
+.runBtn:hover:not(:disabled) { background: var(--accent-hover); }
+.runBtn:disabled              { opacity: 0.55; cursor: not-allowed; }
+
+.runBtnLoading { opacity: 0.75; }
+
+/* Spinner */
+.runSpinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.runOutput {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.runOutputErr {
+  border-color: var(--color-error-border);
+  color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.runBadge {
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--bg-overlay);
+  color: var(--text-muted);
+}
+
+.runBadgeOk  { background: var(--color-match-bg);  color: var(--color-match);  border: 1px solid var(--color-match-border); }
+.runBadgeErr { background: var(--color-error-bg);  color: var(--color-error);  border: 1px solid var(--color-error-border); }

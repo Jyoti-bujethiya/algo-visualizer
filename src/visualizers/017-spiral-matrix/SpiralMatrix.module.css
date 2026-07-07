@@ -1,0 +1,55 @@
+/* Spiral Matrix — SpiralMatrix.module.css */
+
+.canvas { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 16px 0; }
+
+.matrixGrid {
+  display: grid;
+  gap: 4px;
+}
+
+.cell {
+  width: 48px; height: 48px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--bg-overlay);
+  border: 2px solid var(--border);
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  position: relative;
+}
+
+.cellVal { font-size: var(--font-size-md); font-weight: 700; font-family: var(--font-mono); color: var(--text-primary); }
+.cellPtr { position: absolute; top: 2px; left: 3px; font-size: 8px; font-family: var(--font-mono); color: var(--accent); opacity: 0.85; line-height: 1; }
+.visitOrder { font-size: 9px; color: var(--text-muted); position: absolute; bottom: 3px; }
+
+/* direction-specific active cell tints */
+.dirRight { background: var(--color-compare-bg) !important; border-color: var(--color-compare-border) !important; }
+.dirDown  { background: var(--color-special-bg) !important; border-color: var(--color-special-border) !important; }
+.dirLeft  { background: var(--color-current-bg) !important; border-color: var(--color-current-border) !important; }
+.dirUp    { background: var(--color-match-bg)   !important; border-color: var(--color-match-border)   !important; }
+.dirRight .cellVal { color: var(--color-compare) !important; }
+.dirDown  .cellVal { color: var(--color-special) !important; }
+.dirLeft  .cellVal { color: var(--color-current) !important; }
+.dirUp    .cellVal { color: var(--color-match)   !important; }
+
+/* visited: dimmed */
+.visited { background: var(--bg-surface) !important; border-color: var(--border) !important; }
+.visited .cellVal { color: var(--text-muted) !important; opacity: 0.5; }
+
+/* complete: all green */
+.special { background: var(--color-match-bg) !important; border-color: var(--color-match-border) !important; }
+.special .cellVal { color: var(--color-match) !important; }
+
+.resultRow {
+  display: flex; gap: 8px; align-items: center;
+  font-size: var(--font-size-base); color: var(--text-secondary);
+}
+.resultLabel { font-weight: 600; color: var(--text-primary); }
+.resultList  { font-family: var(--font-mono); color: var(--text-secondary); max-width: 400px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.resultBadge {
+  padding: 8px 16px; border-radius: var(--radius-md);
+  background: var(--color-match-bg);
+  border: 1px solid var(--color-match-border);
+  color: var(--color-match); font-size: var(--font-size-base); font-weight: 500;
+  text-align: center;
+}

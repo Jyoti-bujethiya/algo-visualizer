@@ -1,0 +1,134 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.resultBadge {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+}
+
+.resultTrue {
+  background: var(--color-match-bg);
+  color: var(--color-match);
+  border: 2px solid var(--color-match);
+}
+
+.resultFalse {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+/* ── Cap row ── */
+.capRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.courseBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px 6px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg-surface);
+  min-width: 56px;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.courseBox.courseCurrent {
+  border-color: var(--color-current);
+  background: var(--color-current-bg);
+  transform: scale(1.1);
+}
+
+.courseBox.courseDone {
+  border-color: var(--color-match);
+  background: var(--color-match-bg);
+}
+
+.courseBox.courseError {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+.capIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.courseLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.cycleOverlay {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.warnIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.queueRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.queueLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.queueCell {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-compare, #f59e0b);
+  border-radius: 6px;
+  background: #fffbeb;
+  font-weight: 700;
+  font-size: 14px;
+  color: #92400e;
+  font-family: var(--font-mono);
+}
+
+[data-theme="light"] .courseBox {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .queueCell {
+  background: #fffbeb;
+  border-color: #fbbf24;
+}

@@ -1,0 +1,16 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.plot{background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;overflow:visible}
+.axis{stroke:var(--border-strong);stroke-width:1}
+.axisLabel{font-size:10px;fill:var(--text-muted);font-family:var(--font-mono)}
+.origin{fill:var(--text-muted)}
+.point{fill:var(--bg-overlay);stroke:var(--border-strong);stroke-width:2;transition:all .15s}
+.ptCurrent{fill:var(--color-current-bg)!important;stroke:var(--color-current)!important}
+.ptMatch{fill:var(--color-match-bg)!important;stroke:var(--color-match)!important}
+.ptDiscard{fill:var(--color-discard-bg)!important;stroke:var(--color-discard)!important;opacity:.5}
+.ptLabel{font-size:10px;fill:var(--text-muted);font-family:var(--font-mono)}
+.heapRow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.heapCell{min-width:60px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:8px;background:var(--bg-overlay);font-weight:700;font-size:12px;font-family:var(--font-mono);color:var(--text-primary);line-height:1.1;padding:0 6px}
+.heapRoot{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special)}
+.distLbl{font-size:9px;color:var(--text-muted)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

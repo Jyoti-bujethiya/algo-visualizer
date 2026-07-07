@@ -1,0 +1,42 @@
+/* ── Shared pointer badge — used on bars, char cells, linked-list nodes, etc. ── */
+.ptr {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  /* default: accent blue */
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--border-accent);
+}
+
+/* Colour variants matching the semantic token system */
+.current {
+  background: var(--color-current-bg);
+  color: var(--color-current);
+  border-color: var(--color-current-border);
+}
+
+.compare {
+  background: var(--color-compare-bg);
+  color: var(--color-compare);
+  border-color: var(--color-compare-border);
+}
+
+.special {
+  background: var(--color-special-bg);
+  color: var(--color-special);
+  border-color: var(--color-special-border);
+}
+
+.match {
+  background: var(--color-match-bg);
+  color: var(--color-match);
+  border-color: var(--color-match-border);
+}

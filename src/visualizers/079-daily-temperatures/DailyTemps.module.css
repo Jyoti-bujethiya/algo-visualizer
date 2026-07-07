@@ -1,0 +1,51 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+
+/* ── Bar chart ── */
+.chart{display:flex;align-items:flex-end;gap:5px;padding:0 6px 2px;background:var(--bg-surface);border-radius:10px;border:1px solid var(--border);padding:12px 8px 6px}
+
+.barCol{display:flex;flex-direction:column;align-items:center;gap:2px;position:relative}
+
+.iconSlot{height:30px;display:flex;align-items:flex-end;justify-content:center}
+
+.weatherIcon{width:28px;height:28px;display:block}
+.weatherIconWide{width:28px;height:20px;display:block}
+
+.answerBadge{
+  position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+  font-size:9px;font-weight:700;color:var(--color-match);
+  background:var(--color-match-bg);border:1px solid var(--color-match);
+  border-radius:8px;padding:0 4px;white-space:nowrap;font-family:var(--font-mono);
+}
+
+.bar{
+  width:34px;
+  border-radius:4px 4px 0 0;
+  border:2px solid var(--border);
+  background:var(--bg-overlay);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding-top:4px;
+  transition:height .2s,background .15s,border-color .15s;
+}
+
+.barCurrent{background:var(--color-current-bg)!important;border-color:var(--color-current)!important}
+.barStacked{background:var(--color-compare-bg)!important;border-color:var(--color-compare)!important}
+.barPopped {background:var(--color-match-bg)!important;border-color:var(--color-match)!important}
+
+.barTemp{font-size:9px;font-weight:700;font-family:var(--font-mono);color:var(--text-secondary)}
+.barIdx {font-size:9px;color:var(--text-muted);font-family:var(--font-mono)}
+
+/* ── Stack row ── */
+.stackRow{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;justify-content:center}
+
+.stackCell{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:4px 6px;border:2px solid var(--border);border-radius:8px;
+  background:var(--bg-overlay);min-width:36px;transition:border-color .15s;
+}
+.stackTop{border-color:var(--color-compare);background:var(--color-compare-bg)}
+
+.thermSvg{width:20px;height:44px;display:block}
+.stackIdx{font-size:11px;font-weight:700;font-family:var(--font-mono);color:var(--text-primary)}
+.stackTemp{font-size:9px;color:var(--text-muted);font-family:var(--font-mono)}
+.empty{font-size:13px;color:var(--text-muted);font-style:italic}

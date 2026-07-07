@@ -1,0 +1,47 @@
+.canvas { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Input word row */
+.inputRow { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-2); }
+
+.wordCell {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: var(--space-2) var(--space-3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--bg-overlay);
+  transition: border-color .2s, background .2s;
+}
+.ptrRow { height: 20px; display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+.wordCell.active  { border-color: var(--color-current); background: color-mix(in srgb, var(--color-current) 15%, transparent); }
+.wordCell.current { border-color: var(--color-current); background: color-mix(in srgb, var(--color-current) 15%, transparent); }
+.wordCell.match   { border-color: var(--color-match);   background: color-mix(in srgb, var(--color-match)   12%, transparent); }
+.wordCell.special { border-color: var(--color-special); background: color-mix(in srgb, var(--color-special) 12%, transparent); }
+.wordCell.compare { border-color: var(--color-compare); background: color-mix(in srgb, var(--color-compare) 12%, transparent); }
+.wordCell.discard { border-color: var(--color-discard); background: color-mix(in srgb, var(--color-discard) 10%, transparent); opacity: .7; }
+.wordCell.error   { border-color: var(--color-error);   background: color-mix(in srgb, var(--color-error)   12%, transparent); }
+
+.keyBadge { font-size: 9px; font-family: var(--font-mono); color: var(--color-special); white-space: nowrap; background: var(--bg-surface); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--color-special); }
+.wordText { font-size: var(--font-size-sm); font-family: var(--font-mono); font-weight: 600; color: var(--text-primary); }
+.wordIdx  { font-size: 9px; color: var(--text-muted); font-family: var(--font-mono); }
+
+/* Group boxes */
+.groups { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+.groupBox {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--bg-overlay);
+  min-width: 80px; transition: border-color .2s;
+}
+.groupBox.current { border-color: var(--color-current); }
+.groupBox.match   { border-color: var(--color-match); }
+.groupBox.special { border-color: var(--color-special); }
+.groupBox.compare { border-color: var(--color-compare); }
+.groupBox.discard { border-color: var(--color-discard); }
+.groupBox.error   { border-color: var(--color-error); }
+.groupActive { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent); }
+
+.groupKey  { font-size: var(--font-size-xs); font-family: var(--font-mono); color: var(--accent); font-weight: 600; }
+.groupWords { display: flex; flex-wrap: wrap; gap: 4px; }
+.groupWord { font-size: var(--font-size-xs); font-family: var(--font-mono); padding: 2px 6px; border-radius: 99px; background: var(--bg-sunken); border: 1px solid var(--border); color: var(--text-secondary); }
+
+/* Result badge */
+.resultBadge { padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-family: var(--font-mono); color: var(--color-match); background: color-mix(in srgb, var(--color-match) 12%, transparent); border: 1px solid var(--color-match); }

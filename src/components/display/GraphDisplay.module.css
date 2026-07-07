@@ -1,0 +1,118 @@
+.wrap {
+  padding: var(--space-4);
+  overflow: auto;
+  min-height: 260px;
+}
+
+.svg {
+  overflow: visible;
+}
+
+/* Edges */
+.edge {
+  stroke: var(--border-strong);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.edgeDirect {
+  stroke: var(--color-special);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* Arrow markers */
+.arrowHead {
+  fill: var(--border-strong);
+}
+.arrowHeadDirect {
+  fill: var(--color-special);
+}
+
+/* Nodes */
+.nodeCircle {
+  fill: var(--bg-overlay);
+  stroke: var(--border-strong);
+  stroke-width: 2.5;
+  transition: fill 0.15s ease, stroke 0.15s ease, filter 0.15s ease;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.35));
+}
+
+.nodeText {
+  fill: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  dominant-baseline: central;
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Highlight states ─────────────────────────────────────────────────────── */
+.current {
+  fill: var(--color-current-bg) !important;
+  stroke: var(--color-current) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 7px var(--color-current-border)) !important;
+}
+.compare {
+  fill: var(--color-compare-bg) !important;
+  stroke: var(--color-compare) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 7px var(--color-compare-border)) !important;
+}
+.match {
+  fill: var(--color-match-bg)   !important;
+  stroke: var(--color-match)   !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 7px var(--color-match-border)) !important;
+}
+.special {
+  fill: var(--color-special-bg) !important;
+  stroke: var(--color-special) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 7px var(--color-special-border)) !important;
+}
+.discard {
+  fill: var(--color-discard-bg) !important;
+  stroke: var(--color-discard) !important;
+  opacity: 0.4;
+}
+.error {
+  fill: var(--color-error-bg)   !important;
+  stroke: var(--color-error)   !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 7px var(--color-error-border)) !important;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  padding: var(--space-4);
+}
+
+/* ── Light mode ── */
+[data-theme="light"] .nodeCircle {
+  fill: #ffffff;
+  stroke: var(--border-strong);
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12));
+}
+
+[data-theme="light"] .current {
+  filter: drop-shadow(0 0 5px var(--color-current-border)) !important;
+}
+[data-theme="light"] .compare {
+  filter: drop-shadow(0 0 5px var(--color-compare-border)) !important;
+}
+[data-theme="light"] .match {
+  filter: drop-shadow(0 0 5px var(--color-match-border)) !important;
+}
+[data-theme="light"] .special {
+  filter: drop-shadow(0 0 5px var(--color-special-border)) !important;
+}
+[data-theme="light"] .error {
+  filter: drop-shadow(0 0 5px var(--color-error-border)) !important;
+}

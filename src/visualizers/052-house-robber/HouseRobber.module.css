@@ -1,0 +1,121 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 0;
+}
+
+.resultBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-match);
+  padding: 5px 18px;
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Street row ── */
+.street {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  padding: 8px 12px 0;
+  position: relative;
+}
+
+.houseWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  position: relative;
+}
+
+/* SVG house gets state classes */
+.houseSvg {
+  width: 56px;
+  height: 56px;
+  transition: filter 0.2s, transform 0.2s;
+}
+.houseWrap.stateBase   .houseSvg { filter: drop-shadow(0 0 4px #a78bfa); }
+.houseWrap.stateCurrent .houseSvg { transform: scale(1.12); filter: drop-shadow(0 0 6px var(--color-current)); }
+.houseWrap.stateCompare .houseSvg { filter: drop-shadow(0 0 5px var(--color-compare)); }
+.houseWrap.stateRobbed  .houseSvg { filter: drop-shadow(0 0 6px #ef4444); }
+.houseWrap.stateDone    .houseSvg { filter: drop-shadow(0 0 4px var(--color-match)) brightness(1.05); }
+
+.houseIndex {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.houseVal {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* Robber indicator that appears above current house */
+.robberBadge {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  line-height: 1;
+  animation: bobble 0.6s ease-in-out infinite alternate;
+}
+@keyframes bobble {
+  from { transform: translateX(-50%) translateY(0); }
+  to   { transform: translateX(-50%) translateY(-4px); }
+}
+
+/* dp row below houses */
+.dpRowLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.dpChip {
+  width: 56px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-overlay);
+  font-weight: 700;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.dpChipSpecial  { border-color: #a78bfa; background: #ede9fe; color: #7c3aed; }
+.dpChipCurrent  { border-color: var(--color-current); background: var(--color-current-bg); color: var(--color-current); }
+.dpChipCompare  { border-color: var(--color-compare); background: var(--color-compare-bg); color: var(--color-compare); }
+.dpChipMatch    { border-color: var(--color-match);   background: var(--color-match-bg);   color: var(--color-match); }
+.dpChipNull     { color: var(--text-muted); opacity: .4; }
+
+.dpRow {
+  display: flex;
+  gap: 6px;
+}

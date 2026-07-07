@@ -1,0 +1,98 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* ── Result badge ── */
+.resultBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-match);
+  padding: 5px 16px;
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.editIcon { width: 20px; height: 20px; flex-shrink: 0; }
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Word diff rows ── */
+.diffWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.diffRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.diffLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.diffChar {
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 5px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-overlay);
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 700;
+  color: var(--text-primary);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.diffCharActive {
+  border-color: var(--color-current);
+  background: var(--color-current-bg);
+  color: var(--color-current);
+  transform: scale(1.12);
+}
+
+/* ── Operation badge ── */
+.opBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1.5px solid;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.opIcon { width: 20px; height: 20px; flex-shrink: 0; }
+
+.opDelete  { background: #fef2f2; color: #dc2626; border-color: #fca5a5; }
+.opInsert  { background: #d1fae5; color: #15803d; border-color: #6ee7b7; }
+.opReplace { background: #fffbeb; color: #b45309; border-color: #fde68a; }
+.opMatch   { background: #eff6ff; color: #1d4ed8; border-color: #93c5fd; }

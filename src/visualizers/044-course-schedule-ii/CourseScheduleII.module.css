@@ -1,0 +1,134 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.emptyResult {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-error);
+  background: var(--color-error-bg);
+  border: 2px solid var(--color-error);
+  padding: 6px 18px;
+  border-radius: 8px;
+}
+
+/* ── Order rail (diploma scrolls) ── */
+.orderRail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.orderStep {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.diplomaIcon {
+  width: 36px;
+  height: 28px;
+}
+
+.orderNum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.railArrow {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px;
+}
+
+/* ── Cap row ── */
+.capRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.courseBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px 6px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg-surface);
+  min-width: 52px;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.courseBox.courseCurrent {
+  border-color: var(--color-current);
+  background: var(--color-current-bg);
+  transform: scale(1.1);
+}
+
+.courseBox.courseDone {
+  border-color: var(--color-match);
+  background: var(--color-match-bg);
+}
+
+.courseBox.courseError {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.courseLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* order badge — shows rank number in top-right */
+.orderBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.orderLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+[data-theme="light"] .courseBox {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .orderRail {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}

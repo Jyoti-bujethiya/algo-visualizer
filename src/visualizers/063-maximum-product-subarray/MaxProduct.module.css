@@ -1,0 +1,186 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+/* ── Result badge ── */
+.resultBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #92400e;
+  padding: 5px 16px;
+  background: #fef9c3;
+  border: 2px solid #ca8a04;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.resultIcon { width: 20px; height: 20px; flex-shrink: 0; }
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Swap badge ── */
+.swapBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #f3e8ff;
+  border: 1.5px solid #c084fc;
+  border-radius: 6px;
+  padding: 4px 12px;
+}
+
+.signFlipIcon {
+  width: 32px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── Dual-track bar chart ── */
+.chartWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.trackLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.barChart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dualCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+/* maxP track (green, top) */
+.maxTrack {
+  height: 88px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.maxBar {
+  width: 24px;
+  border-radius: 3px 3px 0 0;
+  background: #86efac;
+  border: 1px solid #16a34a;
+  position: relative;
+  min-height: 4px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.maxBarResult {
+  background: #16a34a !important;
+  box-shadow: 0 0 8px #16a34a88;
+}
+
+.barTip {
+  font-size: 8px;
+  font-weight: 700;
+  color: #14532d;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  position: absolute;
+  top: -14px;
+}
+
+/* center value chip */
+.valChip {
+  position: relative;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 1.5px solid;
+  min-width: 26px;
+  text-align: center;
+}
+
+.valChipPos { background: #f0fdf4; color: #16a34a; border-color: #86efac; }
+.valChipNeg { background: #fef2f2; color: #dc2626; border-color: #fca5a5; }
+.valChipZero { background: #f9fafb; color: #6b7280; border-color: #d1d5db; }
+.valChipActive {
+  box-shadow: 0 0 0 2px #f59e0b;
+  transform: scale(1.1);
+}
+
+.negBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #dc2626;
+  font-weight: 700;
+  white-space: nowrap;
+  background: #fef2f2;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* minP track (red, bottom) */
+.minTrack {
+  height: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.minBar {
+  width: 24px;
+  border-radius: 0 0 3px 3px;
+  background: #fca5a5;
+  border: 1px solid #dc2626;
+  position: relative;
+  min-height: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.barTipMin {
+  font-size: 8px;
+  font-weight: 700;
+  color: #7f1d1d;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  position: absolute;
+  bottom: -14px;
+}

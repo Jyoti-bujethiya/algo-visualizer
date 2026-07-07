@@ -1,0 +1,109 @@
+.canvas {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 260px;
+}
+
+.sectionLabel {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tlRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tlLabel {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  min-width: 96px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tlTrack {
+  flex: 1;
+  height: 24px;
+  position: relative;
+  background: var(--bg-overlay);
+  border-radius: var(--radius-sm);
+}
+
+.tlBar {
+  position: absolute;
+  top: 3px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--bg-overlay);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+  transition: background 0.2s, border-color 0.2s;
+  min-width: 20px;
+  overflow: hidden;
+}
+
+.tlBar.current { background: color-mix(in srgb, var(--color-current) 30%, transparent); border-color: var(--color-current); }
+.tlBar.match   { background: color-mix(in srgb, var(--color-match)   30%, transparent); border-color: var(--color-match); }
+.tlBar.compare { background: color-mix(in srgb, var(--color-compare) 25%, transparent); border-color: var(--color-compare); }
+.tlBar.special { background: color-mix(in srgb, var(--color-special) 30%, transparent); border-color: var(--color-special); }
+
+.tick {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+.tickEnd { margin-left: auto; }
+
+/* Result row */
+.resultTrack {
+  position: relative;
+  height: 28px;
+  background: var(--bg-overlay);
+  border-radius: var(--radius-sm);
+}
+
+.resultBar {
+  position: absolute;
+  top: 4px;
+  height: 20px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--color-compare) 25%, transparent);
+  border: 1px solid var(--color-compare);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 24px;
+}
+
+.resultBar.special {
+  background: color-mix(in srgb, var(--color-match) 30%, transparent);
+  border-color: var(--color-match);
+}
+
+.resultLbl {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  padding: 0 3px;
+}

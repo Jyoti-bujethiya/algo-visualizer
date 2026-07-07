@@ -1,0 +1,16 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.resultBadge{font-size:17px;font-weight:700;padding:4px 18px;border-radius:8px;font-family:var(--font-mono);border:2px solid var(--color-match);color:var(--color-match);background:var(--color-match-bg)}
+.resultNone{border-color:var(--color-error);color:var(--color-error);background:var(--color-error-bg)}
+.arrayWrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
+.arrayRow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center}
+.cell{min-width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:8px;background:var(--bg-overlay);font-weight:700;font-size:15px;font-family:var(--font-mono);color:var(--text-primary);transition:background .15s,border-color .15s}
+.cellCurrent{border-color:var(--color-current);background:var(--color-current-bg);color:var(--color-current)}
+.cellCompare{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.cellMatch{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match)}
+.cellSpecial{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special)}
+.pointerRow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center}
+.ptr{min-width:42px;text-align:center;font-size:11px;font-weight:700;font-family:var(--font-mono);color:var(--text-muted)}
+.ptrLo{color:var(--color-special)}
+.ptrHi{color:var(--color-special)}
+.ptrMid{color:var(--color-current)}

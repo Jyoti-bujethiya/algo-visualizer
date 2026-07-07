@@ -1,0 +1,154 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+}
+
+/* ── Chart wrapper ── */
+.chartWrap {
+  position: relative;
+  padding: 4px 0 0;
+}
+
+/* ── Bar chart ── */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 8px 12px 4px;
+  background: #f0f9ff;
+  border-radius: 10px;
+  border: 1px solid #bae6fd;
+  min-height: 260px;
+  position: relative;
+}
+
+.colWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 28px;
+}
+
+/* Boat row above bars */
+.boatRow {
+  height: 26px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.boatIcon {
+  width: 28px;
+  height: 22px;
+  display: block;
+}
+
+.barVal {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ── Bar stack (stone + water) ── */
+.barStack {
+  width: 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.2s;
+}
+
+/* Water layer — top portion */
+.waterLayer {
+  width: 100%;
+  position: relative;
+  background: rgba(56, 189, 248, 0.45);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Animated wave shimmer inside water */
+.waterWave {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 300%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+  animation: waveShimmer 1.8s linear infinite;
+}
+
+@keyframes waveShimmer {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(33%); }
+}
+
+/* Raindrop badge inside water cell */
+.raindropWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.raindropIcon {
+  width: 20px;
+  height: 26px;
+  display: block;
+}
+
+/* Stone column — bottom portion */
+.stoneBar {
+  width: 100%;
+  background: #94a3b8;
+  border: 1px solid #64748b;
+  border-radius: 3px 3px 0 0;
+  flex-shrink: 0;
+}
+
+.stoneBarActive {
+  background: #f59e0b !important;
+  border-color: #d97706 !important;
+}
+
+.barIdx {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Water level hint line */
+.waterLevel {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 10px;
+  color: #0ea5e9;
+  font-weight: 700;
+  background: rgba(240, 249, 255, 0.9);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.waterLevelLabel {
+  font-family: var(--font-mono);
+}
+
+/* ── Total badge ── */
+.totalBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 2px solid #38bdf8;
+  border-radius: 8px;
+  padding: 6px 16px;
+}

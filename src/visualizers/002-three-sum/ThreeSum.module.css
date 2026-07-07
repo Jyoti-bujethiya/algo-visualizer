@@ -1,0 +1,5 @@
+.canvas { display: flex; flex-direction: column; gap: var(--space-4); height: 100%; overflow: auto; }
+.tripletsSection { padding: var(--space-3); background: var(--bg-overlay); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.tripletsLabel { font-size: var(--font-size-xs); font-weight: 600; text-transform: uppercase; letter-spacing:.06em; color: var(--text-muted); margin-bottom: var(--space-2); }
+.tripletsList { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.triplet { font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: 700; padding: 3px 10px; border-radius: var(--radius-sm); background: var(--color-match-bg); border: 1px solid var(--color-match-border); color: var(--color-match); }

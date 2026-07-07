@@ -1,0 +1,106 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.resultBadge {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 18px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.resultOk {
+  color: var(--color-match);
+  background: var(--color-match-bg);
+  border: 2px solid var(--color-match);
+}
+
+.resultFail {
+  color: var(--color-error);
+  background: var(--color-error-bg);
+  border: 2px solid var(--color-error);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Coin tray ── */
+.coinTray {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coinWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: transform 0.2s;
+}
+
+.coinWrap.coinActive {
+  transform: translateY(-6px) scale(1.1);
+  filter: drop-shadow(0 4px 8px #f59e0b88);
+}
+
+.coinSvg {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.coinArrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: #f59e0b;
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
+/* ── Result ok wrap with coin stack ── */
+.resultOkWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Coin stack ── */
+.coinStack {
+  position: relative;
+  width: 44px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.stackCoin {
+  position: absolute;
+  left: 0;
+}
+
+.stackCoin svg {
+  width: 44px;
+  height: 44px;
+}
+
+.stackMore {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-match);
+  font-family: var(--font-mono);
+}

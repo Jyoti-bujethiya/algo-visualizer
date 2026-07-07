@@ -1,0 +1,45 @@
+/* Find First and Last Position — FindFirstLast.module.css */
+
+.canvas { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 16px 0; }
+.empty  { color: var(--text-muted); font-size: var(--font-size-base); padding: var(--space-5); }
+
+.arrayRow { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+
+.cellWrap { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.ptrRow { height: 20px; display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+
+.cell {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md); font-weight: 700; font-family: var(--font-mono);
+  color: var(--text-primary);
+  background: var(--bg-overlay);
+  border: 2px solid var(--border);
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+/* search states — correct token names */
+.current { background: var(--color-current-bg) !important; border-color: var(--color-current-border) !important; color: var(--color-current) !important; }
+.compare { background: var(--color-compare-bg) !important; border-color: var(--color-compare-border) !important; color: var(--color-compare) !important; }
+.match   { background: var(--color-match-bg)   !important; border-color: var(--color-match-border)   !important; color: var(--color-match)   !important; }
+.special { background: var(--color-special-bg) !important; border-color: var(--color-special-border) !important; color: var(--color-special) !important; }
+
+.idx  { font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--text-muted); }
+
+.resultRow {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  background: var(--bg-overlay);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.resultBadge {
+  padding: 8px 16px; border-radius: var(--radius-md);
+  font-size: var(--font-size-base); font-weight: 500;
+}
+.found    { background: var(--color-match-bg);  border: 1px solid var(--color-match-border);  color: var(--color-match); }
+.notFound { background: var(--color-error-bg);  border: 1px solid var(--color-error-border);  color: var(--color-error); }

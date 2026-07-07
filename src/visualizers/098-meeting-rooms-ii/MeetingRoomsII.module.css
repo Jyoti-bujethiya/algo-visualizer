@@ -1,0 +1,22 @@
+.canvas{display:flex;flex-direction:column;align-items:center;gap:16px;padding:12px 0}
+.label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.roomsBadge{font-size:18px;font-weight:700;padding:4px 18px;border-radius:8px;font-family:var(--font-mono);border:2px solid var(--color-special);color:var(--color-special);background:var(--color-special-bg)}
+.timeline{display:flex;flex-direction:column;gap:6px;width:100%;max-width:520px}
+.intervalRow{display:flex;align-items:center;gap:10px}
+.intervalLabel{font-family:var(--font-mono);font-size:13px;font-weight:600;min-width:80px;color:var(--text-secondary)}
+.intervalBar{position:relative;height:26px;flex:1;background:var(--bg-overlay);border-radius:4px}
+.bar{position:absolute;height:100%;border-radius:4px;background:var(--color-compare-bg);border:2px solid var(--color-compare);display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-mono);font-weight:700;color:var(--color-compare);transition:all .15s}
+.barCurrent{background:var(--color-current-bg);border-color:var(--color-current);color:var(--color-current)}
+.barDone{background:var(--color-match-bg);border-color:var(--color-match);color:var(--color-match);opacity:.8}
+.heapRow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.heapCell{min-width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:50%;background:var(--bg-overlay);font-weight:700;font-size:14px;font-family:var(--font-mono);color:var(--text-primary)}
+.heapRoot{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special);transform:scale(1.1)}
+.chronoWrap{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.chronoBlock{display:flex;flex-direction:column;align-items:center;gap:6px}
+.chronoTitle{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase}
+.chronoRow{display:flex;gap:4px;flex-wrap:wrap}
+.chronoCell{min-width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:6px;background:var(--bg-overlay);font-weight:700;font-size:13px;font-family:var(--font-mono);color:var(--text-primary)}
+.chronoCurrent{border-color:var(--color-current);background:var(--color-current-bg);color:var(--color-current)}
+.chronoCompare{border-color:var(--color-compare);background:var(--color-compare-bg);color:var(--color-compare)}
+.chronoDone{border-color:var(--color-match);background:var(--color-match-bg);color:var(--color-match);opacity:.7}
+.chronoVisiting{border-color:var(--color-special);background:var(--color-special-bg);color:var(--color-special)}

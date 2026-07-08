@@ -5,7 +5,7 @@ import styles from './HomePage.module.css'
 
 export default function HomePage() {
   const total = problems.length
-  const { done } = useDoneProblems()
+  const { done, isDone } = useDoneProblems()
   const doneCount = done.size
 
   return (
@@ -54,6 +54,9 @@ export default function HomePage() {
           <div className={styles.cards}>
             {categories.map(cat => {
               const catProblems = problems.filter(p => p.categorySlug === cat.slug)
+              const catDone = catProblems.filter(p => isDone(p.slug)).length
+              const catTotal = catProblems.length
+              const pct = catTotal > 0 ? Math.round((catDone / catTotal) * 100) : 0
               return (
                 <Link
                   key={cat.slug}
@@ -63,11 +66,24 @@ export default function HomePage() {
                   <div className={styles.catLabel}>{cat.label}</div>
                   <div className={styles.catCount}>{cat.count} problems</div>
                   <div className={styles.catTags}>
-                    {/* Show a few unique tags from the first 3 problems */}
                     {[...new Set(catProblems.slice(0, 3).flatMap(p => p.tags))].slice(0, 3).map(t => (
                       <span key={t} className={styles.catTag}>{t}</span>
                     ))}
                   </div>
+
+                  {/* Per-category progress */}
+                  <div className={styles.catProgress}>
+                    <div className={styles.catProgressTrack}>
+                      <div
+                        className={styles.catProgressFill}
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                    <span className={styles.catProgressLabel}>
+                      {catDone}/{catTotal}
+                    </span>
+                  </div>
+
                   <div className={styles.catArrow}>→</div>
                 </Link>
               )

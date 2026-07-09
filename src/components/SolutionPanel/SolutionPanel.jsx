@@ -193,18 +193,20 @@ export default function SolutionPanel({ problem }) {
   return (
     <div className={styles.panel}>
 
-      {/* ── Top bar: language tabs ──────────────────────────────────────── */}
+      {/* ── Top bar: language dropdown ──────────────────────────────────── */}
       <div className={styles.topBar}>
         <div className={styles.langBar}>
-          {LANGS.map(lang => (
-            <button
-              key={lang.id}
-              className={`${styles.langTab} ${activeLang === lang.id ? styles.langTabActive : ''}`}
-              onClick={() => setActiveLang(lang.id)}
-            >
-              {lang.label}
-            </button>
-          ))}
+          <label htmlFor="lang-select" className={styles.langLabel}>Language:</label>
+          <select
+            id="lang-select"
+            className={styles.langSelect}
+            value={activeLang}
+            onChange={e => setActiveLang(e.target.value)}
+          >
+            {LANGS.map(lang => (
+              <option key={lang.id} value={lang.id}>{lang.label}</option>
+            ))}
+          </select>
         </div>
 
         {/* Approach pills */}

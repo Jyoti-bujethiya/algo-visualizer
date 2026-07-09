@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import styles from './VisualizerShell.module.css'
 import LeftPanel from './LeftPanel.jsx'
 import RightPanel from './RightPanel.jsx'
@@ -52,6 +53,23 @@ export default function VisualizerShell({
   children,
 }) {
   const activeCodeLine = hook?.step?.codeLineIndex ?? -1
+
+  // Keyboard shortcuts: Space = play/pause, ← = prev, → = next, R = reset
+  useEffect(() => {
+    if (!hook) return
+    function onKeyDown(e) {
+      // Don't fire when user is typing in an input/textarea
+      const tag = document.activeElement?.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return
+
+      if (e.key === ' ')           { e.preventDefault(); hook.togglePlay() }
+      else if (e.key === 'ArrowLeft')  { e.preventDefault(); hook.prev() }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); hook.next() }
+      else if (e.key === 'r' || e.key === 'R') { hook.reset() }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [hook])
 
   // Derive time/space from the active algorithm's complexity string
   const activeAlgo = algorithms.find(a => a.id === selectedAlgo) ?? algorithms[0]

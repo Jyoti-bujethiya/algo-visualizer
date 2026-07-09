@@ -27,6 +27,8 @@ export default function ControlsBar({ hook }) {
 
   return (
     <div className={styles.controls}>
+      {/* Row 1: Playback + speed + counter */}
+      <div className={styles.controlsRow}>
       {/* Playback buttons — all live inside one pill container */}
       <div className={styles.controlBtns}>
         <button
@@ -87,6 +89,12 @@ export default function ControlsBar({ hook }) {
       {/* Step counter */}
       <div className={styles.stepCount}>
         {notStarted ? '—' : `${currentStep + 1} / ${totalSteps}`}
+      </div>
+      </div>{/* end controlsRow */}
+
+      {/* Row 2: Keyboard hint */}
+      <div className={styles.kbdHint} aria-hidden="true">
+        <kbd>Space</kbd> play &nbsp;·&nbsp; <kbd>←</kbd><kbd>→</kbd> step &nbsp;·&nbsp; <kbd>R</kbd> reset
       </div>
     </div>
   )

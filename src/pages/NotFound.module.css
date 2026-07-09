@@ -28,3 +28,24 @@
 .link:hover {
   color: var(--accent-hover);
 }
+
+.randomBtn {
+  padding: 8px 20px;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background var(--transition-fast);
+}
+
+.randomBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}

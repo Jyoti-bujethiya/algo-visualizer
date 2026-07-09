@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
-import { useUser } from '@clerk/react'
+import { useUser } from '@clerk/clerk-react'
 
 const STORAGE_KEY = 'dsa-done-problems'
 const META_KEY    = 'doneProblems'        // key inside Clerk publicMetadata

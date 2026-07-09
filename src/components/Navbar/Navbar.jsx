@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/react'
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
 import { useTheme } from '../../contexts/ThemeContext.jsx'
 import styles from './Navbar.module.css'
 

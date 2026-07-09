@@ -23,7 +23,10 @@ export default function LeftPanel({
                 className={`${styles.sideBtn} ${selectedTest === i ? styles.sideBtnActive : ''}`}
                 onClick={() => onTestChange?.(i)}
               >
-                <span className={styles.sideBtnLabel}>{tc.label ?? `Test ${i + 1}`}</span>
+                <div className={styles.sideBtnRow}>
+                  <span className={styles.sideBtnBadge}>{i + 1}</span>
+                  <span className={styles.sideBtnLabel}>{tc.label ?? `Test ${i + 1}`}</span>
+                </div>
                 {tc.detail && <span className={styles.sideBtnDetail}>{tc.detail}</span>}
               </button>
             ))}

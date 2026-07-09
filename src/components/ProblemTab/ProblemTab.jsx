@@ -350,16 +350,17 @@ function CodeCompiler({ problem }) {
       {/* Language selector */}
       <div className={styles.compilerTopBar}>
         <div className={styles.langBar}>
-          {LANGS.map(l => (
-            <button
-              key={l.id}
-              className={`${styles.langTab} ${lang === l.id ? styles.langTabActive : ''}`}
-              onClick={() => handleLangChange(l.id)}
-            >
-              <span className={styles.langDot} style={{ background: l.dot }} />
-              {l.label}
-            </button>
-          ))}
+          <label htmlFor="compiler-lang-select" className={styles.langLabel}>Language:</label>
+          <select
+            id="compiler-lang-select"
+            className={styles.langSelect}
+            value={lang}
+            onChange={e => handleLangChange(e.target.value)}
+          >
+            {LANGS.map(l => (
+              <option key={l.id} value={l.id}>{l.label}</option>
+            ))}
+          </select>
         </div>
         <button
           className={`${styles.runBtn} ${running ? styles.runBtnLoading : ''}`}

@@ -308,41 +308,40 @@
 .langBar {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--space-2);
 }
 
-.langTab {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 11px var(--space-4);
+.langLabel {
   font-size: var(--font-size-sm);
-  font-weight: 600;
   color: var(--text-muted);
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  cursor: pointer;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-  font-family: var(--font-sans);
+  font-weight: 500;
   white-space: nowrap;
 }
 
-.langTab:hover {
+.langSelect {
+  font-size: var(--font-size-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
   color: var(--text-primary);
+  background: var(--bg-overlay);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px 30px 4px 14px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2357606a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+  line-height: 1.6;
+  min-width: 100px;
 }
 
-.langTabActive {
-  color: var(--text-primary) !important;
-  border-bottom-color: var(--accent) !important;
-}
-
-.langDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
+.langSelect:hover,
+.langSelect:focus {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
 }
 
 /* ── Run button ─────────────────────────────────────────────────────────── */

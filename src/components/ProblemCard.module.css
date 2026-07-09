@@ -41,15 +41,6 @@
 
 .top {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.id {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
 }
 
 /* Difficulty badge */

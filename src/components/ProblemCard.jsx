@@ -9,7 +9,7 @@ const DIFF_CLASS = {
 }
 
 export default function ProblemCard({ problem }) {
-  const { id, slug, title, difficulty, tags } = problem
+  const { slug, title, difficulty, tags } = problem
   const { isDone } = useDoneProblems()
   const done = isDone(slug)
 
@@ -17,14 +17,13 @@ export default function ProblemCard({ problem }) {
     <Link to={`/problem/${slug}`} className={`${styles.card} ${done ? styles.cardDone : ''}`}>
       {done && <span className={styles.doneCheck} aria-label="Completed">✓</span>}
 
-      <div className={styles.top}>
-        <span className={styles.id}>#{id.toString().padStart(3, '0')}</span>
-        {difficulty && (
+      {difficulty && (
+        <div className={styles.top}>
           <span className={`${styles.diff} ${DIFF_CLASS[difficulty] ?? ''}`}>
             {difficulty}
           </span>
-        )}
-      </div>
+        </div>
+      )}
 
       <h3 className={styles.title}>{title}</h3>
 

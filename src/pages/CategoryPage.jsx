@@ -4,6 +4,8 @@ import { getProblemsByCategory, categories } from '../data/problems.js'
 import ProblemCard from '../components/ProblemCard.jsx'
 import styles from './CategoryPage.module.css'
 
+const DIFF_ORDER = { Easy: 0, Medium: 1, Hard: 2 }
+
 const DIFFICULTIES = ['All', 'Easy', 'Medium', 'Hard']
 
 export default function CategoryPage() {
@@ -36,12 +38,14 @@ export default function CategoryPage() {
 
   const hasFilters = activeTags.size > 0 || difficulty !== 'All'
 
-  // Difficulty filter + all active tags must match (AND logic)
-  const filtered = probs.filter(p => {
-    const diffMatch = difficulty === 'All' || p.difficulty === difficulty
-    const tagMatch = activeTags.size === 0 || [...activeTags].every(t => p.tags.includes(t))
-    return diffMatch && tagMatch
-  })
+  // Difficulty filter + all active tags must match (AND logic), then sort Easy → Medium → Hard
+  const filtered = probs
+    .filter(p => {
+      const diffMatch = difficulty === 'All' || p.difficulty === difficulty
+      const tagMatch = activeTags.size === 0 || [...activeTags].every(t => p.tags.includes(t))
+      return diffMatch && tagMatch
+    })
+    .sort((a, b) => (DIFF_ORDER[a.difficulty] ?? 1) - (DIFF_ORDER[b.difficulty] ?? 1))
 
   if (!cat) {
     return (

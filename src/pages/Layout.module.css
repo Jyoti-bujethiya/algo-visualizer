@@ -1,14 +1,15 @@
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .main {
   flex: 1;
   padding-top: var(--navbar-height);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  /* overflow visible so home/category/search pages can scroll normally.
+     The visualizer shell manages its own internal overflow. */
+  overflow: visible;
 }

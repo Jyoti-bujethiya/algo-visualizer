@@ -29,3 +29,5 @@ __pycache__/
 
 # Java compiled files
 *.class
+.env.local
+.env*.local

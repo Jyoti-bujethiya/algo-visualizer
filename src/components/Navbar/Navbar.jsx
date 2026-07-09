@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { categories } from '../../data/problems.js'
+import { Link, useNavigate } from 'react-router-dom'
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/react'
 import { useTheme } from '../../contexts/ThemeContext.jsx'
 import styles from './Navbar.module.css'
 
@@ -77,6 +77,22 @@ export default function Navbar() {
         >
           {theme === 'dark' ? <SunSVG /> : <MoonSVG />}
         </button>
+
+        {/* Auth */}
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className={styles.signInBtn}>Sign In</button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: styles.clerkAvatar,
+              },
+            }}
+          />
+        </SignedIn>
 
       </div>
     </nav>
